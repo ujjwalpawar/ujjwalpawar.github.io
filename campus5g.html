@@ -1,0 +1,467 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Campus5G Photo Journey | Ujjwal Pawar</title>
+    <meta
+      name="description"
+      content="A visual timeline of the Campus5G private Open RAN testbed journey at the University of Edinburgh."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #f8fafc;
+        --surface: #ffffff;
+        --ink: #0f172a;
+        --muted: #475569;
+        --accent: #2563eb;
+        --accent-soft: #dbeafe;
+        --line: #cbd5e1;
+        --border: #e2e8f0;
+        --shadow: 0 22px 55px rgba(15, 23, 42, 0.09);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Inter", system-ui, -apple-system, sans-serif;
+        color: var(--ink);
+        background:
+          radial-gradient(circle at top left, rgba(37, 99, 235, 0.12), transparent 34rem),
+          linear-gradient(180deg, #ffffff 0%, var(--bg) 42%);
+        line-height: 1.6;
+      }
+
+      a {
+        color: var(--accent);
+        text-decoration: none;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+
+      .page {
+        max-width: 1120px;
+        margin: 0 auto;
+        padding: 34px 24px 80px;
+      }
+
+      .topbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 16px;
+        margin-bottom: 58px;
+      }
+
+      .back-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        color: var(--muted);
+        font-size: 14px;
+        font-weight: 600;
+      }
+
+      .badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        border-radius: 999px;
+        padding: 8px 14px;
+        background: var(--accent-soft);
+        color: #1e40af;
+        font-size: 13px;
+        font-weight: 800;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+      }
+
+      .hero {
+        max-width: 860px;
+        margin-bottom: 48px;
+      }
+
+      h1 {
+        font-family: "Newsreader", serif;
+        font-size: clamp(44px, 8vw, 86px);
+        line-height: 0.92;
+        letter-spacing: -0.055em;
+        margin: 0 0 22px;
+      }
+
+      .lede {
+        max-width: 760px;
+        color: var(--muted);
+        font-size: 19px;
+        margin: 0;
+      }
+
+      .timeline {
+        position: relative;
+        display: grid;
+        gap: 28px;
+        margin-top: 42px;
+      }
+
+      .timeline::before {
+        content: "";
+        position: absolute;
+        top: 10px;
+        bottom: 10px;
+        left: 20px;
+        width: 2px;
+        background: linear-gradient(180deg, transparent, var(--line) 7%, var(--line) 92%, transparent);
+      }
+
+      .moment {
+        position: relative;
+        display: grid;
+        grid-template-columns: 64px minmax(0, 0.95fr) minmax(280px, 1.05fr);
+        gap: 24px;
+        align-items: stretch;
+      }
+
+      .dot {
+        position: relative;
+        z-index: 1;
+        width: 42px;
+        height: 42px;
+        border-radius: 999px;
+        background: #0f172a;
+        color: #ffffff;
+        display: grid;
+        place-items: center;
+        font-weight: 800;
+        box-shadow: 0 0 0 8px #ffffff, 0 15px 30px rgba(15, 23, 42, 0.16);
+      }
+
+      .copy,
+      .photo-slot {
+        background: rgba(255, 255, 255, 0.86);
+        border: 1px solid var(--border);
+        border-radius: 22px;
+        box-shadow: var(--shadow);
+      }
+
+      .copy {
+        padding: 24px;
+      }
+
+      .copy time {
+        color: var(--accent);
+        font-weight: 800;
+        font-size: 13px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .copy h2 {
+        font-family: "Newsreader", serif;
+        font-size: 30px;
+        line-height: 1.05;
+        margin: 10px 0 12px;
+      }
+
+      .copy p {
+        color: var(--muted);
+        margin: 0;
+      }
+
+      .photo-slot {
+        min-height: 260px;
+        padding: 12px;
+        display: grid;
+        place-items: center;
+        overflow: hidden;
+        background:
+          linear-gradient(135deg, rgba(15, 23, 42, 0.04), rgba(37, 99, 235, 0.08)),
+          #ffffff;
+      }
+
+      .slide-image {
+        width: 100%;
+        display: block;
+        border-radius: 16px;
+        border: 1px solid var(--border);
+        box-shadow: 0 18px 38px rgba(15, 23, 42, 0.12);
+      }
+
+      .slide-meta {
+        display: inline-flex;
+        margin-bottom: 10px;
+        color: #1e40af;
+        background: var(--accent-soft);
+        border-radius: 999px;
+        padding: 5px 10px;
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+      }
+
+      .photo-frame {
+        width: 100%;
+        min-height: 220px;
+        border: 1.5px dashed #94a3b8;
+        border-radius: 18px;
+        display: grid;
+        place-items: center;
+        padding: 22px;
+        color: var(--muted);
+        text-align: center;
+        background:
+          repeating-linear-gradient(
+            135deg,
+            rgba(37, 99, 235, 0.045) 0,
+            rgba(37, 99, 235, 0.045) 10px,
+            transparent 10px,
+            transparent 24px
+          );
+      }
+
+      .photo-frame strong {
+        display: block;
+        color: var(--ink);
+        font-size: 17px;
+        margin-bottom: 6px;
+      }
+
+      .photo-frame code {
+        display: inline-block;
+        margin-top: 10px;
+        padding: 5px 8px;
+        border-radius: 8px;
+        background: #e2e8f0;
+        color: #334155;
+        font-size: 12px;
+      }
+
+      .note {
+        margin-top: 34px;
+        color: var(--muted);
+        font-size: 14px;
+        background: #ffffff;
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        padding: 16px 18px;
+      }
+
+      @media (max-width: 860px) {
+        .moment {
+          grid-template-columns: 48px 1fr;
+        }
+
+        .photo-slot {
+          grid-column: 2;
+        }
+      }
+
+      @media (max-width: 620px) {
+        .page {
+          padding: 24px 16px 56px;
+        }
+
+        .topbar {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+
+        .timeline::before {
+          left: 16px;
+        }
+
+        .moment {
+          grid-template-columns: 1fr;
+        }
+
+        .dot {
+          display: none;
+        }
+
+        .photo-slot {
+          grid-column: auto;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page">
+      <nav class="topbar" aria-label="Page navigation">
+        <a class="back-link" href="index.html">← Back to CV</a>
+        <span class="badge">Campus5G · Photo Journey</span>
+      </nav>
+
+      <header class="hero">
+        <h1>Campus5G journey</h1>
+        <p class="lede">
+          A visual timeline for the campus-scale O-RAN-compliant private 5G testbed at
+          the University of Edinburgh.
+        </p>
+      </header>
+
+      <section class="timeline" aria-label="Campus5G timeline">
+        <article class="moment">
+          <div class="dot">01</div>
+          <div class="copy">
+            <span class="slide-meta">Initial setup in lab</span>
+            <h2>Testing one cell end-to-end</h2>
+            <p>
+              Before installation, the team tested a one-cell end-to-end setup inside the
+              lab.
+            </p>
+          </div>
+          <div class="photo-slot">
+            <img class="slide-image" src="assets/campus5g/dsit-87.png" alt="Campus5G DSIT slide 87: RAN Stack Testing" />
+          </div>
+        </article>
+
+        <article class="moment">
+          <div class="dot">02</div>
+          <div class="copy">
+            <span class="slide-meta">Antenna type used</span>
+            <h2>Antenna type used</h2>
+            <p>
+              We use Benetel and VVDN RUs with these antennas as part of the Campus5G
+              deployment.
+            </p>
+          </div>
+          <div class="photo-slot">
+            <img class="slide-image" src="assets/campus5g/dsit-08.png" alt="Campus5G DSIT slide 8: Antennas" />
+          </div>
+        </article>
+
+        <article class="moment">
+          <div class="dot">03</div>
+          <div class="copy">
+            <span class="slide-meta">Campus view</span>
+            <h2>Visualizing the deployment footprint</h2>
+            <p>
+              The testbed moved from a lab idea toward a campus-scale system with physical
+              locations, paths, and coverage constraints.
+            </p>
+          </div>
+          <div class="photo-slot">
+            <img class="slide-image" src="assets/campus5g/dsit-10.png" alt="Campus5G DSIT slide 10" />
+          </div>
+        </article>
+
+        <article class="moment">
+          <div class="dot">04</div>
+          <div class="copy">
+            <span class="slide-meta">System design</span>
+            <h2>Designing the private 5G stack</h2>
+            <p>
+              Campus5G brought the RAN, core, timing, and management pieces into one
+              experimental platform.
+            </p>
+          </div>
+          <div class="photo-slot">
+            <img class="slide-image" src="assets/campus5g/dsit-19.png" alt="Campus5G DSIT slide 19" />
+          </div>
+        </article>
+
+        <article class="moment">
+          <div class="dot">05</div>
+          <div class="copy">
+            <span class="slide-meta">Resilience</span>
+            <h2>Surviving Storm Éowyn</h2>
+            <p>
+              Campus5G survived Storm Éowyn, giving an early proof point for deployment
+              resilience.
+            </p>
+          </div>
+          <div class="photo-slot">
+            <img class="slide-image" src="assets/campus5g/dsit-20.png" alt="Campus5G DSIT slide 20" />
+          </div>
+        </article>
+
+        <article class="moment">
+          <div class="dot">06</div>
+          <div class="copy">
+            <span class="slide-meta">Deployment</span>
+            <h2>Fiber installation</h2>
+            <p>
+              Fiber links were installed across the campus deployment to connect the radio
+              sites back to the testbed infrastructure.
+            </p>
+          </div>
+          <div class="photo-slot">
+            <img class="slide-image" src="assets/campus5g/dsit-28.png" alt="Campus5G DSIT slide 28" />
+          </div>
+        </article>
+
+        <article class="moment">
+          <div class="dot">07</div>
+          <div class="copy">
+            <span class="slide-meta">Lessons learned</span>
+            <h2>Troubleshooting the hard parts</h2>
+            <p>
+              Timing sync failures, VLAN issues, VF-MAC mapping, TDD/PRACH settings, and
+              frequency mismatches became concrete engineering lessons.
+            </p>
+          </div>
+          <div class="photo-slot">
+            <img class="slide-image" src="assets/campus5g/dsit-77.png" alt="Campus5G DSIT slide 77: Things we learned" />
+          </div>
+        </article>
+
+        <article class="moment">
+          <div class="dot">08</div>
+          <div class="copy">
+            <span class="slide-meta">Fiber testing</span>
+            <h2>Validating the transport path</h2>
+            <p>
+              Fiber testing helped make the physical transport layer dependable before the
+              full system came online.
+            </p>
+          </div>
+          <div class="photo-slot">
+            <img class="slide-image" src="assets/campus5g/dsit-84.png" alt="Campus5G DSIT slide 84: Fiber Testing" />
+          </div>
+        </article>
+
+        <article class="moment">
+          <div class="dot">09</div>
+          <div class="copy">
+            <span class="slide-meta">Radio testing</span>
+            <h2>Checking the radio layer</h2>
+            <p>
+              Radio testing validated the RF-facing components before full end-to-end
+              operation.
+            </p>
+          </div>
+          <div class="photo-slot">
+            <img class="slide-image" src="assets/campus5g/dsit-86.png" alt="Campus5G DSIT slide 86: Radio Testing" />
+          </div>
+        </article>
+
+        <article class="moment">
+          <div class="dot">10</div>
+          <div class="copy">
+            <span class="slide-meta">Deployment testing</span>
+            <h2>Walk testing the live deployment</h2>
+            <p>
+              The complete deployment was tested end-to-end with multiple walk tests across
+              the campus environment.
+            </p>
+          </div>
+          <div class="photo-slot">
+            <img class="slide-image" src="assets/campus5g/dsit-88.png" alt="Campus5G DSIT slide 88: Deployment Testing" />
+          </div>
+        </article>
+      </section>
+
+    </main>
+  </body>
+</html>
