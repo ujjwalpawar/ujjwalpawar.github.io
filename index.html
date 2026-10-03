@@ -247,6 +247,18 @@
         margin-bottom: 24px;
       }
 
+      .career-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1.55fr) minmax(280px, 1fr);
+        gap: 24px;
+        align-items: start;
+        margin-top: 48px;
+      }
+
+      .career-grid > section {
+        margin-top: 0;
+      }
+
       .panel {
         background: var(--surface);
         border: 1px solid var(--border);
@@ -495,6 +507,10 @@
           grid-template-columns: 1fr;
         }
 
+        .career-grid {
+          grid-template-columns: 1fr;
+        }
+
         .year-block {
           grid-template-columns: 1fr;
         }
@@ -591,6 +607,7 @@
         </div>
       </header>
 
+      <div class="career-grid">
       <section id="experience">
         <h2>Experience</h2>
         <p class="section-lede">
@@ -646,6 +663,7 @@
           </article>
         </div>
       </section>
+      </div>
 
       <section id="publications">
         <h2>Publications</h2>
