@@ -1,0 +1,194 @@
+.window-controls button {
+  width: 21px;
+  height: 19px;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  color: #000000;
+  background: #c0c0c0;
+  border: 2px solid;
+  border-color: #ffffff #000000 #000000 #ffffff;
+  box-shadow:
+    inset 1px 1px 0 #dfdfdf,
+    inset -1px -1px 0 #808080;
+  font: 700 13px/1 Arial, sans-serif;
+  cursor: default;
+}
+
+.window-controls button:hover,
+.window-controls button:focus-visible {
+  outline: 1px dotted #000000;
+  outline-offset: -4px;
+}
+
+.window-controls button:active {
+  border-color: #000000 #ffffff #ffffff #000000;
+  box-shadow: inset 1px 1px 0 #808080;
+  transform: translate(1px, 1px);
+}
+
+.win95-dialog-layer[hidden],
+.win95-screensaver[hidden] {
+  display: none;
+}
+
+.win95-dialog-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.38);
+}
+
+.win95-dialog {
+  width: min(390px, 100%);
+  padding: 3px;
+  color: #000000;
+  background: #c0c0c0;
+  border: 2px solid;
+  border-color: #ffffff #000000 #000000 #ffffff;
+  box-shadow:
+    inset 1px 1px 0 #dfdfdf,
+    inset -1px -1px 0 #808080,
+    4px 4px 0 rgba(0, 0, 0, 0.55);
+  font-family: Tahoma, "MS Sans Serif", "Microsoft Sans Serif", Arial, sans-serif;
+}
+
+.win95-dialog-titlebar {
+  min-height: 27px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 3px 4px 3px 7px;
+  color: #ffffff;
+  background: #000080;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.win95-dialog-close,
+.win95-dialog-ok {
+  color: #000000;
+  background: #c0c0c0;
+  border: 2px solid;
+  border-color: #ffffff #000000 #000000 #ffffff;
+  box-shadow:
+    inset 1px 1px 0 #dfdfdf,
+    inset -1px -1px 0 #808080;
+  font-family: inherit;
+  font-weight: 700;
+  cursor: default;
+}
+
+.win95-dialog-close {
+  width: 21px;
+  height: 19px;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  font-size: 13px;
+  line-height: 1;
+}
+
+.win95-dialog-close:active,
+.win95-dialog-ok:active {
+  border-color: #000000 #ffffff #ffffff #000000;
+  box-shadow: inset 1px 1px 0 #808080;
+  transform: translate(1px, 1px);
+}
+
+.win95-dialog-close:focus-visible,
+.win95-dialog-ok:focus-visible {
+  outline: 1px dotted #000000;
+  outline-offset: -4px;
+}
+
+.win95-dialog-body {
+  display: grid;
+  grid-template-columns: 40px minmax(0, 1fr);
+  gap: 12px;
+  align-items: start;
+  padding: 22px 18px 16px;
+  font-size: 13px;
+}
+
+.win95-dialog-body img {
+  width: 32px;
+  height: 32px;
+  image-rendering: pixelated;
+}
+
+.win95-dialog-body p {
+  margin: 0 0 8px;
+}
+
+.win95-dialog-body a {
+  overflow-wrap: anywhere;
+}
+
+.win95-dialog-actions {
+  display: flex;
+  justify-content: center;
+  padding: 0 18px 18px;
+}
+
+.win95-dialog-ok {
+  min-width: 82px;
+  padding: 5px 16px;
+  font-size: 12px;
+}
+
+.win95-screensaver {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  overflow: hidden;
+  background: #000000;
+  cursor: none;
+  touch-action: none;
+}
+
+.win95-screensaver canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.win95-screensaver-hint {
+  position: absolute;
+  right: 18px;
+  bottom: 16px;
+  margin: 0;
+  padding: 4px 7px;
+  color: #ffffff;
+  background: rgba(0, 0, 0, 0.68);
+  border: 1px solid #808080;
+  font: 12px/1.3 Tahoma, "MS Sans Serif", Arial, sans-serif;
+  opacity: 0.8;
+  pointer-events: none;
+}
+
+body.win95-locked {
+  overflow: hidden;
+}
+
+@media (max-width: 600px) {
+  .window-controls button {
+    width: 19px;
+    height: 18px;
+  }
+
+  .win95-dialog-layer {
+    padding: 10px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .win95-dialog-layer,
+  .win95-screensaver {
+    scroll-behavior: auto;
+  }
+}
