@@ -973,7 +973,83 @@
       }
 
       .award-badge {
+        position: relative;
         background: var(--win-yellow);
+        transform-origin: center;
+        filter: drop-shadow(2px 2px 0 var(--win-dark));
+        animation: award-pop 2.2s steps(6, end) infinite;
+      }
+
+      .award-badge .pixel-icon {
+        width: 14px;
+        height: 14px;
+        transform-origin: center;
+        animation: trophy-spin 1.8s steps(8, end) infinite;
+      }
+
+      .award-badge::before,
+      .award-badge::after {
+        content: "";
+        position: absolute;
+        width: 4px;
+        height: 4px;
+        background: var(--win-blue);
+        box-shadow:
+          0 -6px 0 var(--win-blue),
+          0 6px 0 var(--win-blue),
+          -6px 0 0 var(--win-blue),
+          6px 0 0 var(--win-blue);
+        opacity: 0;
+        pointer-events: none;
+        animation: award-spark 2.2s steps(4, end) infinite;
+      }
+
+      .award-badge::before {
+        top: -7px;
+        right: -7px;
+      }
+
+      .award-badge::after {
+        bottom: -7px;
+        left: -7px;
+        animation-delay: 0.2s;
+      }
+
+      @keyframes trophy-spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      @keyframes award-pop {
+        0%,
+        68%,
+        100% {
+          transform: scale(1) rotate(0);
+        }
+        76% {
+          transform: scale(1.14) rotate(-2deg);
+        }
+        84% {
+          transform: scale(1.06) rotate(2deg);
+        }
+        92% {
+          transform: scale(1.1) rotate(0);
+        }
+      }
+
+      @keyframes award-spark {
+        0%,
+        66%,
+        100% {
+          opacity: 0;
+          transform: scale(0.5) rotate(0);
+        }
+        76%,
+        92% {
+          opacity: 1;
+          transform: scale(1) rotate(90deg);
+        }
       }
 
       footer {
@@ -1217,7 +1293,7 @@
                 </div>
                 <div class="pub-meta">
                   <span class="badge demo">Demo</span>
-                  <span class="award-badge">Best Demo Award</span>
+                  <span class="award-badge"><img class="pixel-icon" src="assets/icons/trophy.svg" alt="" aria-hidden="true" />Best Demo Award</span>
                   <span>ACM MobiCom ’25</span>
                   <a href="https://doi.org/10.1145/3680207.3765606">DOI</a>
                 </div>
@@ -1349,7 +1425,7 @@
                 <div class="pub-title">Panoramic: A Cross-Layer Measurement Platform for Open RAN Deployments</div>
                 <div class="pub-meta">
                   <span class="badge workshop">Workshop</span>
-                  <span>ACM OpenRan ’26</span>
+                  <span>ACM Open-AI RAN Workshop ’26</span>
                 </div>
               </article>
             </div>
