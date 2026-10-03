@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Ujjwal Pawar | Researcher</title>
+    <title>Ujjwal Pawar | Open RAN &amp; 6G Researcher</title>
     <meta
       name="description"
-      content="Researcher CV of Ujjwal Pawar: Open RAN, 5G systems, anomaly detection, and RAN emulation."
+      content="Ujjwal Pawar researches Open RAN and 5G/6G systems, with a focus on large-scale testbeds, RAN emulation, telemetry, and AI-driven network automation."
     />
     <link rel="icon" href="favicon.svg" type="image/svg+xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -26,6 +26,7 @@
         --accent-soft: #e0e7ff;
         --border: #e2e8f0;
         --shadow: 0 20px 50px rgba(15, 23, 42, 0.08);
+        --surface-muted: #f1f5f9;
       }
 
       * {
@@ -36,7 +37,9 @@
         margin: 0;
         font-family: "Inter", system-ui, -apple-system, sans-serif;
         color: var(--ink);
-        background: var(--bg);
+        background:
+          radial-gradient(circle at 85% 2%, rgba(37, 99, 235, 0.1), transparent 28rem),
+          var(--bg);
         line-height: 1.6;
       }
 
@@ -47,6 +50,27 @@
 
       a:hover {
         text-decoration: underline;
+      }
+
+      a:focus-visible {
+        outline: 3px solid rgba(37, 99, 235, 0.35);
+        outline-offset: 4px;
+        border-radius: 4px;
+      }
+
+      .skip-link {
+        position: fixed;
+        top: -100px;
+        left: 12px;
+        z-index: 10;
+        padding: 10px 14px;
+        background: var(--ink);
+        color: #ffffff;
+        border-radius: 8px;
+      }
+
+      .skip-link:focus {
+        top: 12px;
       }
 
       .page {
@@ -86,6 +110,15 @@
         margin: 0 0 8px;
       }
 
+      .eyebrow {
+        margin: 0 0 8px;
+        color: var(--accent);
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
       .subtitle {
         font-size: 18px;
         color: var(--muted);
@@ -100,6 +133,44 @@
         border: 1px solid var(--border);
         margin: 0 0 24px;
         font-size: 18px;
+      }
+
+      .bio p:first-child {
+        margin-top: 0;
+      }
+
+      .bio p:last-child {
+        margin-bottom: 0;
+      }
+
+      .quick-facts {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 12px;
+        margin: 24px 0 0;
+      }
+
+      .quick-facts div {
+        padding: 16px;
+        background: rgba(255, 255, 255, 0.72);
+        border: 1px solid var(--border);
+        border-radius: 14px;
+      }
+
+      .quick-facts dt {
+        color: var(--muted);
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .quick-facts dd {
+        margin: 6px 0 0;
+        font-family: "Newsreader", serif;
+        font-size: 21px;
+        font-weight: 600;
+        line-height: 1.2;
       }
 
       .meta-card {
@@ -206,9 +277,68 @@
         margin-bottom: 24px;
       }
 
+      .cv-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
+      }
+
+      .panel {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        padding: 24px;
+        box-shadow: 0 12px 30px rgba(15, 23, 42, 0.04);
+      }
+
+      .timeline {
+        display: grid;
+        gap: 20px;
+      }
+
+      .timeline-item {
+        display: grid;
+        grid-template-columns: 118px minmax(0, 1fr);
+        gap: 18px;
+      }
+
+      .timeline-date {
+        color: var(--accent);
+        font-size: 13px;
+        font-weight: 700;
+        font-variant-numeric: tabular-nums;
+      }
+
+      .timeline-item h3,
+      .panel h3 {
+        margin: 0 0 4px;
+        font-size: 16px;
+      }
+
+      .timeline-item p,
+      .panel p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      .stack-list {
+        display: grid;
+        gap: 18px;
+      }
+
+      .stack-list article + article {
+        padding-top: 18px;
+        border-top: 1px solid var(--border);
+      }
+
       .pubs {
         display: grid;
         gap: 24px;
+      }
+
+      .year-block[data-year="2026"] {
+        order: -1;
       }
 
       .year-block {
@@ -385,6 +515,11 @@
         color: #92400e;
       }
 
+      .badge.magazine {
+        background: #fce7f3;
+        color: #9d174d;
+      }
+
       footer {
         margin-top: 64px;
         color: var(--muted);
@@ -403,11 +538,53 @@
         .year {
           position: static;
         }
+
+        .cv-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 600px) {
+        .page {
+          padding: 32px 18px 56px;
+        }
+
+        .hero {
+          gap: 28px;
+        }
+
+        .hero h1 {
+          font-size: 40px;
+        }
+
+        .quick-facts {
+          grid-template-columns: 1fr;
+        }
+
+        .timeline-item {
+          grid-template-columns: 1fr;
+          gap: 5px;
+        }
+
+        .panel {
+          padding: 20px;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          scroll-behavior: auto !important;
+        }
       }
     </style>
   </head>
   <body>
-    <div class="page">
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <main class="page" id="main-content">
       <header class="hero">
         <div class="photo-card">
           <img class="profile-photo" src="assets/profile.jpg" alt="Ujjwal Pawar" />
@@ -420,30 +597,133 @@
           </ul>
           <h3>Research Interests</h3>
           <ul class="meta-list">
-            <li>Energy efficiency in RAN</li>
-            <li>Secure Open RAN interfaces</li>
-            <li>Resilience in Open RAN</li>
+            <li>Open RAN optimization</li>
+            <li>RAN telemetry and emulation</li>
+            <li>AI-driven network automation</li>
           </ul>
         </div>
         <div>
+          <p class="eyebrow">Open RAN · 5G/6G · Network systems</p>
           <h1>Ujjwal Pawar</h1>
-          <p class="subtitle">Researcher in Open RAN &amp; 5G Systems</p>
+          <p class="subtitle">PhD researcher building and operating large-scale mobile network systems</p>
           <div class="bio">
             <p>
-              Ujjwal Pawar is a PhD student at the University of Edinburgh, working in the
+              I am a PhD student at the University of Edinburgh, working in the
               <a href="https://netsys.inf.ed.ac.uk/">NetSys Lab</a> under the supervision of
               <a href="https://homepages.inf.ed.ac.uk/mmarina/">Prof. Mahesh K. Marina</a>.
-              His research focuses on Open RAN and private 5G systems, with an emphasis on
-              using real-world deployments to study mobile network operation, measurement,
-              and efficiency. He contributed to Campus5G, a campus-scale O-RAN-compliant
-              private 5G testbed deployed across the University of Edinburgh’s central campus.
+            </p>
+            <p>
+              My research focuses on Open RAN and private 5G systems, with an emphasis on using
+              real-world deployments to study mobile network operation, measurement, and efficiency.
+              I contributed to Campus5G, a campus-scale O-RAN-compliant private 5G testbed deployed
+              across the University of Edinburgh’s central campus.
+            </p>
+            <p>
+              I work across RAN optimization, telemetry, cloud-based emulation, and AI-driven network
+              automation. I am currently an AI/ML Research Intern in Open RAN and 6G Communications
+              at Keysight Technologies.
+            </p>
+            <p>
+              Outside research, I love building mechanical keyboards and will probably ask what
+              kind of key switches your keyboard has.
             </p>
           </div>
           <div class="pill-row">
             <a class="pill link" href="campus5g.html">Campus5G Photo Journey</a>
           </div>
+          <dl class="quick-facts">
+            <div>
+              <dt>Testbed</dt>
+              <dd>20-cell private 5G</dd>
+            </div>
+            <div>
+              <dt>Current focus</dt>
+              <dd>Open RAN &amp; 6G</dd>
+            </div>
+            <div>
+              <dt>Recognition</dt>
+              <dd>Best Demo, MobiCom ’25</dd>
+            </div>
+          </dl>
         </div>
       </header>
+
+      <section id="experience">
+        <h2>Experience</h2>
+        <p class="section-lede">
+          Research and engineering experience spanning production RAN algorithms, campus-scale
+          infrastructure, cloud emulation, and energy-efficient mobile networks.
+        </p>
+        <div class="panel timeline">
+          <article class="timeline-item">
+            <div class="timeline-date">Sep 2026–Present</div>
+            <div>
+              <h3>AI/ML Research Intern · Keysight Technologies</h3>
+              <p>Open RAN and 6G Communications · Edinburgh, UK</p>
+            </div>
+          </article>
+          <article class="timeline-item">
+            <div class="timeline-date">Jan–Jun 2025</div>
+            <div>
+              <h3>Research Associate · University of Edinburgh</h3>
+              <p>Built a 20-cell private 5G network with the NetSys Lab and continue to support its operation.</p>
+            </div>
+          </article>
+          <article class="timeline-item">
+            <div class="timeline-date">Jan–Sep 2022</div>
+            <div>
+              <h3>System Specification Engineer · Nokia R&amp;D</h3>
+              <p>Worked on link adaptation algorithms to improve Voice over New Radio performance.</p>
+            </div>
+          </article>
+          <article class="timeline-item">
+            <div class="timeline-date">2019–2021</div>
+            <div>
+              <h3>Research Assistant · IIT Hyderabad</h3>
+              <p>Developed approaches for energy-efficient data-centre infrastructure for 5G RAN.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="background">
+        <div class="cv-grid">
+          <div>
+            <h2>Education</h2>
+            <div class="panel stack-list">
+              <article>
+                <h3>PhD, Computer Science and Engineering</h3>
+                <p>University of Edinburgh · 2022–Present</p>
+              </article>
+              <article>
+                <h3>MTech, Computer Science and Engineering</h3>
+                <p>Indian Institute of Technology Hyderabad · 2019–2021</p>
+              </article>
+              <article>
+                <h3>BE, Computer Science and Engineering</h3>
+                <p>University Institute of Technology, RGPV · 2014–2018</p>
+              </article>
+            </div>
+          </div>
+          <div>
+            <h2>Recognition &amp; teaching</h2>
+            <div class="panel stack-list">
+              <article>
+                <h3>ACM MobiCom ’26 Travel Grant</h3>
+                <p>Supporting presentation of current Open RAN systems research.</p>
+              </article>
+              <article>
+                <h3>Best Demo Award · ACM MobiCom ’25</h3>
+                <p>For the Campus5G private Open RAN testbed demonstration.</p>
+              </article>
+              <article>
+                <h3>Teaching and marking</h3>
+                <p>Computer Networks at Edinburgh; wireless systems, IoT, network security, and SDN at IIT Hyderabad.</p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <section id="publications">
         <h2>Publications</h2>
@@ -458,7 +738,7 @@
                 </div>
                 <div class="pub-meta">
                   <span class="badge demo">Demo</span>
-                  <span class="award-badge">🏆 Best Demo Award</span>
+                  <span class="award-badge">Best Demo Award</span>
                   <span>ACM MobiCom ’25</span>
                   <a href="https://doi.org/10.1145/3680207.3765606">DOI</a>
                 </div>
@@ -468,7 +748,7 @@
                   Campus5G: A Campus Scale Private 5G Open RAN Testbed
                 </div>
                 <div class="pub-meta">
-                  <span class="badge conference">Conference</span>
+                  <span class="badge magazine">Online Magazine</span>
                   <span>ACM SIGCOMM CCR (July 2025)</span>
                   <a href="https://doi.org/10.1145/3787927.3787930">DOI</a>
                 </div>
@@ -569,25 +849,28 @@
             </div>
           </div>
 
-          <div class="year-block">
+          <div class="year-block" data-year="2026">
             <div class="year">2026</div>
             <div class="pub-list">
-              <article class="pub secret">
-                <div class="pub-title secret-text">
-                  Confidential research paper title hidden while under review
-                </div>
+              <article class="pub">
+                <div class="pub-title">Chronos: Scalable and Cost-Effective Cloud-based RAN Emulation System</div>
                 <div class="pub-meta">
-                  <span class="secret-label">🔒 Under Review</span>
-                  <span class="secret-text">Venue hidden for blind review</span>
+                  <span class="badge conference">Conference</span>
+                  <span>ACM MobiCom ’26</span>
                 </div>
               </article>
-              <article class="pub secret">
-                <div class="pub-title secret-text">
-                  Second confidential research paper title hidden while under review
-                </div>
+              <article class="pub">
+                <div class="pub-title">Chronos: A Cloud-Based RAN Emulation System</div>
                 <div class="pub-meta">
-                  <span class="secret-label">🔒 Under Review</span>
-                  <span class="secret-text">Details hidden for blind review</span>
+                  <span class="badge demo">Demo</span>
+                  <span>ACM MobiCom ’26 Demos</span>
+                </div>
+              </article>
+              <article class="pub">
+                <div class="pub-title">Panoramic: A Cross-Layer Measurement Platform for Open RAN Deployments</div>
+                <div class="pub-meta">
+                  <span class="badge workshop">Workshop</span>
+                  <span>ACM OpenRan ’26</span>
                 </div>
               </article>
             </div>
@@ -596,8 +879,8 @@
       </section>
 
       <footer>
-        Updated May 2026 · Built for GitHub Pages
+        Updated October 2026 · Built for GitHub Pages
       </footer>
-    </div>
+    </main>
   </body>
 </html>
