@@ -389,14 +389,30 @@
       }
 
       .window-icon {
-        width: 17px;
-        height: 17px;
+        position: relative;
+        width: 24px;
+        height: 16px;
         flex: 0 0 auto;
-        background:
-          linear-gradient(90deg, #ff0000 0 48%, transparent 48% 52%, #00a000 52%),
-          linear-gradient(#0000ff 0 48%, transparent 48% 52%, #ffff00 52%);
+        background: linear-gradient(
+          to bottom,
+          #ff9933 0 33.333%,
+          #ffffff 33.333% 66.666%,
+          #138808 66.666% 100%
+        );
         border: 1px solid var(--win-light);
         box-shadow: 1px 1px 0 var(--win-dark);
+      }
+
+      .window-icon::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 5px;
+        height: 5px;
+        border: 1px solid #000080;
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
       }
 
       .window-controls {
@@ -880,6 +896,10 @@
       <footer class="icon-credit">
         <span>Campus5G Photo Journey</span>
         <span>Icons: <a href="https://github.com/halfmage/pixelarticons">Pixelarticons</a> (MIT)</span>
+        <span>3D Pipes: <a href="https://github.com/1j01/pipes">1j01/pipes</a> (MIT)</span>
+        <a class="visitor-counter" href="https://github.com/hehuapei/visitor-badge" title="Aggregate page-view counter; no cookies" aria-label="View the open-source counter project">
+          <img src="https://visitor-badge.laobi.icu/badge?page_id=ujjwalpawar.github.io&amp;left_text=Page%20views&amp;left_color=%23c0c0c0&amp;right_color=%23000080&amp;radius=0&amp;height=20" alt="Live site page-view count" referrerpolicy="no-referrer" />
+        </a>
       </footer>
 
     </main>

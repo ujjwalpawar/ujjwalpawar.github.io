@@ -209,6 +209,22 @@ body.win95-locked {
   overflow: hidden;
 }
 
+.visitor-counter {
+  display: inline-flex;
+  align-items: center;
+  padding: 1px;
+  background: #c0c0c0;
+  border: 2px solid;
+  border-color: #808080 #ffffff #ffffff #808080;
+  line-height: 0;
+}
+
+.visitor-counter img {
+  display: block;
+  width: auto;
+  height: 20px;
+}
+
 @media (max-width: 600px) {
   .window-controls button {
     width: 19px;
