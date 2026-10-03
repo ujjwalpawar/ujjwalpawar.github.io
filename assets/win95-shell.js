@@ -1,5 +1,6 @@
 (() => {
   const EMAIL = "U.Pawar@sms.ed.ac.uk";
+  const PIPES_URL = "assets/vendor/pipes/index.html#%7B%22hideUI%22%3Atrue%7D";
   const page = document.querySelector("main.page");
   const helpButton = document.querySelector("[data-win95-help]");
   const closeButton = document.querySelector("[data-win95-close]");
@@ -33,7 +34,9 @@
   const screensaverTemplate = document.createElement("template");
   screensaverTemplate.innerHTML = `
     <div class="win95-screensaver" role="dialog" aria-modal="true" aria-label="Windows 95 3D Pipes screensaver. Press any key or click to return." hidden>
-      <canvas aria-hidden="true"></canvas>
+      <iframe title="Classic 3D Pipes screensaver" sandbox="allow-scripts" tabindex="-1"></iframe>
+      <div class="win95-screensaver-reduced">3D Pipes paused<br />Press any key or click to return</div>
+      <button class="win95-screensaver-exit" type="button" aria-label="Return to website"></button>
       <p class="win95-screensaver-hint">Press any key or click to return</p>
     </div>
   `;
@@ -44,18 +47,14 @@
   const dialogClose = document.querySelector(".win95-dialog-close");
   const dialogOk = document.querySelector(".win95-dialog-ok");
   const screensaver = document.querySelector(".win95-screensaver");
-  const canvas = screensaver?.querySelector("canvas");
+  const pipesFrame = screensaver?.querySelector("iframe");
+  const exitCatcher = screensaver?.querySelector(".win95-screensaver-exit");
 
-  if (!(dialogLayer instanceof HTMLElement) || !(dialogClose instanceof HTMLButtonElement) || !(dialogOk instanceof HTMLButtonElement) || !(screensaver instanceof HTMLElement) || !(canvas instanceof HTMLCanvasElement)) {
+  if (!(dialogLayer instanceof HTMLElement) || !(dialogClose instanceof HTMLButtonElement) || !(dialogOk instanceof HTMLButtonElement) || !(screensaver instanceof HTMLElement) || !(pipesFrame instanceof HTMLIFrameElement) || !(exitCatcher instanceof HTMLButtonElement)) {
     return;
   }
 
-  const context = canvas.getContext("2d");
   let previousFocus = helpButton;
-  let frameId = 0;
-  let lastStepAt = 0;
-  let segmentCount = 0;
-  let pipes = [];
 
   const setPageLocked = (locked) => {
     document.body.classList.toggle("win95-locked", locked);
@@ -98,114 +97,31 @@
     requestAnimationFrame(() => dialogClose.focus());
   };
 
-  const randomPipe = () => ({
-    x: Math.random() * window.innerWidth,
-    y: Math.random() * window.innerHeight,
-    direction: Math.floor(Math.random() * 4),
-    hue: Math.floor(Math.random() * 360),
-  });
-
-  const resetCanvas = () => {
-    if (!context) return;
-    const ratio = Math.min(window.devicePixelRatio || 1, 2);
-    canvas.width = Math.floor(window.innerWidth * ratio);
-    canvas.height = Math.floor(window.innerHeight * ratio);
-    context.setTransform(ratio, 0, 0, ratio, 0, 0);
-    context.fillStyle = "#000000";
-    context.fillRect(0, 0, window.innerWidth, window.innerHeight);
-    pipes = Array.from({ length: 6 }, randomPipe);
-    segmentCount = 0;
-  };
-
-  const drawJoint = (x, y, hue) => {
-    if (!context) return;
-    const gradient = context.createRadialGradient(x - 3, y - 3, 1, x, y, 10);
-    gradient.addColorStop(0, "#ffffff");
-    gradient.addColorStop(0.3, `hsl(${hue} 90% 65%)`);
-    gradient.addColorStop(1, `hsl(${hue} 85% 20%)`);
-    context.fillStyle = gradient;
-    context.beginPath();
-    context.arc(x, y, 10, 0, Math.PI * 2);
-    context.fill();
-  };
-
-  const drawSegment = (pipe) => {
-    if (!context) return;
-    if (Math.random() < 0.38) {
-      pipe.direction = (pipe.direction + (Math.random() < 0.5 ? 1 : 3)) % 4;
-      drawJoint(pipe.x, pipe.y, pipe.hue);
-    }
-
-    const vectors = [[1, 0], [0, 1], [-1, 0], [0, -1]];
-    const [dx, dy] = vectors[pipe.direction];
-    const distance = 34;
-    const nextX = pipe.x + dx * distance;
-    const nextY = pipe.y + dy * distance;
-
-    if (nextX < -20 || nextX > window.innerWidth + 20 || nextY < -20 || nextY > window.innerHeight + 20) {
-      Object.assign(pipe, randomPipe());
-      return;
-    }
-
-    context.lineCap = "round";
-    context.beginPath();
-    context.moveTo(pipe.x, pipe.y);
-    context.lineTo(nextX, nextY);
-    context.strokeStyle = `hsl(${pipe.hue} 85% 18%)`;
-    context.lineWidth = 18;
-    context.stroke();
-    context.strokeStyle = `hsl(${pipe.hue} 86% 54%)`;
-    context.lineWidth = 12;
-    context.stroke();
-    context.strokeStyle = "rgba(255,255,255,0.65)";
-    context.lineWidth = 3;
-    context.stroke();
-    pipe.x = nextX;
-    pipe.y = nextY;
-    segmentCount += 1;
-  };
-
-  const animatePipes = (time) => {
-    if (time - lastStepAt > 75) {
-      pipes.forEach(drawSegment);
-      lastStepAt = time;
-      if (segmentCount > 720) resetCanvas();
-    }
-    frameId = requestAnimationFrame(animatePipes);
-  };
-
   const stopScreensaver = () => {
     if (screensaver.hidden) return;
-    cancelAnimationFrame(frameId);
     screensaver.hidden = true;
-    screensaver.removeEventListener("pointerdown", stopScreensaver);
+    pipesFrame.src = "about:blank";
     document.removeEventListener("keydown", stopScreensaver);
-    window.removeEventListener("resize", resetCanvas);
     setPageLocked(false);
     closeButton.focus();
   };
 
   const startScreensaver = () => {
     if (!dialogLayer.hidden) closeDialog();
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    screensaver.classList.toggle("is-reduced", reduceMotion);
+    pipesFrame.src = reduceMotion ? "about:blank" : PIPES_URL;
     screensaver.hidden = false;
     setPageLocked(true);
-    resetCanvas();
-    screensaver.addEventListener("pointerdown", stopScreensaver);
     document.addEventListener("keydown", stopScreensaver);
-    window.addEventListener("resize", resetCanvas);
-
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      for (let index = 0; index < 18; index += 1) pipes.forEach(drawSegment);
-      return;
-    }
-
-    frameId = requestAnimationFrame(animatePipes);
+    requestAnimationFrame(() => exitCatcher.focus({ preventScroll: true }));
   };
 
   helpButton.addEventListener("click", openDialog);
   closeButton.addEventListener("click", startScreensaver);
   dialogClose.addEventListener("click", closeDialog);
   dialogOk.addEventListener("click", closeDialog);
+  exitCatcher.addEventListener("pointerdown", stopScreensaver);
   dialogLayer.addEventListener("pointerdown", (event) => {
     if (event.target === dialogLayer) closeDialog();
   });

@@ -151,16 +151,50 @@
   touch-action: none;
 }
 
-.win95-screensaver canvas {
+.win95-screensaver iframe {
   width: 100%;
   height: 100%;
   display: block;
+  border: 0;
+  background: #000000;
+}
+
+.win95-screensaver-exit {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: none;
+}
+
+.win95-screensaver-reduced {
+  position: absolute;
+  inset: 0;
+  display: none;
+  place-items: center;
+  color: #ffffff;
+  background: #000000;
+  font: 16px/1.4 Tahoma, "MS Sans Serif", Arial, sans-serif;
+  text-align: center;
+}
+
+.win95-screensaver.is-reduced iframe {
+  display: none;
+}
+
+.win95-screensaver.is-reduced .win95-screensaver-reduced {
+  display: grid;
 }
 
 .win95-screensaver-hint {
   position: absolute;
   right: 18px;
   bottom: 16px;
+  z-index: 2;
   margin: 0;
   padding: 4px 7px;
   color: #ffffff;

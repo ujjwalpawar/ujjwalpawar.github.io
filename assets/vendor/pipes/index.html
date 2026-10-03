@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>3D Pipes Screensaver</title>
+    <style>
+      html,
+      body,
+      #canvas-container {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        overflow: hidden;
+        background: #000000;
+      }
+
+      canvas {
+        position: absolute;
+        inset: 0;
+      }
+    </style>
+    <script src="lib/three.min.js"></script>
+    <script src="lib/OrbitControls.js"></script>
+    <script src="lib/TeapotBufferGeometry.js"></script>
+  </head>
+  <body>
+    <!-- Adapted runner for 1j01/pipes (MIT); renderer source is unmodified. -->
+    <div class="ui-container" hidden>
+      <button id="fullscreen-button" type="button">Fullscreen</button>
+      <label>
+        Joint Type
+        <select id="joint-types">
+          <option value="elbow">Elbow</option>
+          <option value="ball">Ball</option>
+          <option value="mixed" selected>Mixed</option>
+          <option value="cycle">Cycle</option>
+        </select>
+      </label>
+      <button id="toggle-controls" type="button">
+        <span class="normal-controls-enabled">Control Camera</span>
+        <span class="orbit-controls-enabled" hidden>Relinquish Camera</span>
+      </button>
+    </div>
+    <div id="canvas-container">
+      <canvas id="canvas-webgl"></canvas>
+      <canvas id="canvas-2d" style="pointer-events: none"></canvas>
+    </div>
+    <script src="screensaver.js"></script>
+  </body>
+</html>
