@@ -678,9 +678,25 @@
       }
 
       .menu-bar a {
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
         padding: 3px 8px;
         color: var(--win-dark);
         text-decoration: none;
+      }
+
+      .pixel-icon {
+        width: 16px;
+        height: 16px;
+        flex: 0 0 auto;
+        image-rendering: pixelated;
+      }
+
+      .icon-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
       }
 
       .menu-bar a:hover,
@@ -827,6 +843,9 @@
       }
 
       section h2 {
+        display: flex;
+        align-items: center;
+        gap: 7px;
         margin: 0 0 4px;
         padding: 4px 6px;
         color: var(--win-light);
@@ -834,6 +853,10 @@
         font-size: 15px;
         font-weight: 700;
         line-height: 1.25;
+      }
+
+      section h2 .pixel-icon {
+        filter: invert(1);
       }
 
       .career-grid {
@@ -954,6 +977,10 @@
       }
 
       footer {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 6px 16px;
         margin: 10px 6px 0;
         padding: 5px 8px;
         color: var(--win-dark);
@@ -1064,21 +1091,21 @@
         </div>
       </div>
       <nav class="menu-bar" aria-label="Primary navigation">
-        <a href="#experience"><u>E</u>xperience</a>
-        <a href="#background"><u>E</u>ducation</a>
-        <a href="#publications"><u>P</u>ublications</a>
-        <a href="campus5g.html"><u>C</u>ampus5G</a>
-        <a href="assets/cv_ujjwal.pdf"><u>D</u>ownload CV</a>
+        <a href="#experience"><img class="pixel-icon" src="assets/icons/briefcase.svg" alt="" aria-hidden="true" /><u>E</u>xperience</a>
+        <a href="#background"><img class="pixel-icon" src="assets/icons/book-open.svg" alt="" aria-hidden="true" /><u>E</u>ducation</a>
+        <a href="#publications"><img class="pixel-icon" src="assets/icons/file.svg" alt="" aria-hidden="true" /><u>P</u>ublications</a>
+        <a href="campus5g.html"><img class="pixel-icon" src="assets/icons/image.svg" alt="" aria-hidden="true" /><u>C</u>ampus5G</a>
+        <a href="assets/cv_ujjwal.pdf"><img class="pixel-icon" src="assets/icons/file.svg" alt="" aria-hidden="true" /><u>D</u>ownload CV</a>
       </nav>
       <header class="hero">
         <div class="photo-card">
           <img class="profile-photo" src="assets/profile.jpg" alt="Ujjwal Pawar" />
           <h3>Contact</h3>
           <ul class="meta-list">
-            <li><a href="mailto:U.Pawar@sms.ed.ac.uk">U.Pawar@sms.ed.ac.uk</a></li>
-            <li><a href="https://github.com/ujjwalpawar">GitHub</a></li>
+            <li><a class="icon-link" href="mailto:U.Pawar@sms.ed.ac.uk"><img class="pixel-icon" src="assets/icons/mail.svg" alt="" aria-hidden="true" />U.Pawar@sms.ed.ac.uk</a></li>
+            <li><a class="icon-link" href="https://github.com/ujjwalpawar"><img class="pixel-icon" src="assets/icons/github.svg" alt="" aria-hidden="true" />GitHub</a></li>
             <li><a href="https://www.linkedin.com/in/ujjwalpawar/">LinkedIn</a></li>
-            <li><a href="assets/cv_ujjwal.pdf">CV</a></li>
+            <li><a class="icon-link" href="assets/cv_ujjwal.pdf"><img class="pixel-icon" src="assets/icons/file.svg" alt="" aria-hidden="true" />CV</a></li>
           </ul>
           <h3>Research Interests</h3>
           <ul class="meta-list">
@@ -1114,14 +1141,14 @@
             </p>
           </div>
           <div class="pill-row">
-            <a class="pill link" href="campus5g.html">Campus5G Photo Journey</a>
+            <a class="pill link" href="campus5g.html"><img class="pixel-icon" src="assets/icons/image.svg" alt="" aria-hidden="true" />Campus5G Photo Journey</a>
           </div>
         </div>
       </header>
 
       <div class="career-grid">
       <section id="experience">
-        <h2>Experience</h2>
+        <h2><img class="pixel-icon" src="assets/icons/briefcase.svg" alt="" aria-hidden="true" />Experience</h2>
         <p class="section-lede">
           Research and engineering experience spanning production RAN algorithms, campus-scale
           infrastructure, cloud emulation, and energy-efficient mobile networks.
@@ -1159,7 +1186,7 @@
       </section>
 
       <section id="background">
-        <h2>Education</h2>
+        <h2><img class="pixel-icon" src="assets/icons/book-open.svg" alt="" aria-hidden="true" />Education</h2>
         <div class="panel stack-list">
           <article>
             <h3>PhD, Computer Science and Engineering</h3>
@@ -1178,7 +1205,7 @@
       </div>
 
       <section id="publications">
-        <h2>Publications</h2>
+        <h2><img class="pixel-icon" src="assets/icons/file.svg" alt="" aria-hidden="true" />Publications</h2>
 
         <div class="pubs">
           <div class="year-block">
@@ -1331,7 +1358,8 @@
       </section>
 
       <footer>
-        Updated October 2026 · Built for GitHub Pages
+        <span>Updated October 2026 · Built for GitHub Pages</span>
+        <span>Icons: <a href="https://github.com/halfmage/pixelarticons">Pixelarticons</a> (MIT)</span>
       </footer>
     </main>
   </body>

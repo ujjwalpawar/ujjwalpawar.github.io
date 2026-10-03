@@ -422,6 +422,13 @@
         line-height: 1;
       }
 
+      .pixel-icon {
+        width: 16px;
+        height: 16px;
+        flex: 0 0 auto;
+        image-rendering: pixelated;
+      }
+
       .topbar {
         margin: 0;
         padding: 5px 7px 7px;
@@ -584,6 +591,19 @@
         border-radius: 0;
       }
 
+      .icon-credit {
+        display: flex;
+        justify-content: space-between;
+        gap: 8px;
+        margin: 10px 7px 0;
+        padding: 5px 8px;
+        color: var(--win-dark);
+        background: var(--win-face);
+        border: 2px solid;
+        border-color: var(--win-shadow) var(--win-light) var(--win-light) var(--win-shadow);
+        font-size: 11px;
+      }
+
       @media (max-width: 860px) {
         body {
           background: var(--win-face);
@@ -692,8 +712,8 @@
         </div>
       </div>
       <nav class="topbar" aria-label="Page navigation">
-        <a class="back-link" href="index.html">← Back to CV</a>
-        <span class="badge">Campus5G · Photo Journey</span>
+        <a class="back-link" href="index.html"><img class="pixel-icon" src="assets/icons/arrow-left.svg" alt="" aria-hidden="true" />Back to CV</a>
+        <span class="badge"><img class="pixel-icon" src="assets/icons/image.svg" alt="" aria-hidden="true" />Campus5G · Photo Journey</span>
       </nav>
 
       <header class="hero">
@@ -855,6 +875,11 @@
           </div>
         </article>
       </section>
+
+      <footer class="icon-credit">
+        <span>Campus5G Photo Journey</span>
+        <span>Icons: <a href="https://github.com/halfmage/pixelarticons">Pixelarticons</a> (MIT)</span>
+      </footer>
 
     </main>
   </body>
