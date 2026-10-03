@@ -143,36 +143,6 @@
         margin-bottom: 0;
       }
 
-      .quick-facts {
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 12px;
-        margin: 24px 0 0;
-      }
-
-      .quick-facts div {
-        padding: 16px;
-        background: rgba(255, 255, 255, 0.72);
-        border: 1px solid var(--border);
-        border-radius: 14px;
-      }
-
-      .quick-facts dt {
-        color: var(--muted);
-        font-size: 12px;
-        font-weight: 700;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-      }
-
-      .quick-facts dd {
-        margin: 6px 0 0;
-        font-family: "Newsreader", serif;
-        font-size: 21px;
-        font-weight: 600;
-        line-height: 1.2;
-      }
-
       .meta-card {
         background: var(--surface);
         border-radius: 20px;
@@ -275,12 +245,6 @@
         color: var(--muted);
         max-width: 720px;
         margin-bottom: 24px;
-      }
-
-      .cv-grid {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 20px;
       }
 
       .panel {
@@ -539,9 +503,6 @@
           position: static;
         }
 
-        .cv-grid {
-          grid-template-columns: 1fr;
-        }
       }
 
       @media (max-width: 600px) {
@@ -555,10 +516,6 @@
 
         .hero h1 {
           font-size: 40px;
-        }
-
-        .quick-facts {
-          grid-template-columns: 1fr;
         }
 
         .timeline-item {
@@ -631,20 +588,6 @@
           <div class="pill-row">
             <a class="pill link" href="campus5g.html">Campus5G Photo Journey</a>
           </div>
-          <dl class="quick-facts">
-            <div>
-              <dt>Testbed</dt>
-              <dd>20-cell private 5G</dd>
-            </div>
-            <div>
-              <dt>Current focus</dt>
-              <dd>Open RAN &amp; 6G</dd>
-            </div>
-            <div>
-              <dt>Recognition</dt>
-              <dd>Best Demo, MobiCom ’25</dd>
-            </div>
-          </dl>
         </div>
       </header>
 
@@ -687,41 +630,20 @@
       </section>
 
       <section id="background">
-        <div class="cv-grid">
-          <div>
-            <h2>Education</h2>
-            <div class="panel stack-list">
-              <article>
-                <h3>PhD, Computer Science and Engineering</h3>
-                <p>University of Edinburgh · 2022–Present</p>
-              </article>
-              <article>
-                <h3>MTech, Computer Science and Engineering</h3>
-                <p>Indian Institute of Technology Hyderabad · 2019–2021</p>
-              </article>
-              <article>
-                <h3>BE, Computer Science and Engineering</h3>
-                <p>University Institute of Technology, RGPV · 2014–2018</p>
-              </article>
-            </div>
-          </div>
-          <div>
-            <h2>Recognition &amp; teaching</h2>
-            <div class="panel stack-list">
-              <article>
-                <h3>ACM MobiCom ’26 Travel Grant</h3>
-                <p>Supporting presentation of current Open RAN systems research.</p>
-              </article>
-              <article>
-                <h3>Best Demo Award · ACM MobiCom ’25</h3>
-                <p>For the Campus5G private Open RAN testbed demonstration.</p>
-              </article>
-              <article>
-                <h3>Teaching and marking</h3>
-                <p>Computer Networks at Edinburgh; wireless systems, IoT, network security, and SDN at IIT Hyderabad.</p>
-              </article>
-            </div>
-          </div>
+        <h2>Education</h2>
+        <div class="panel stack-list">
+          <article>
+            <h3>PhD, Computer Science and Engineering</h3>
+            <p>University of Edinburgh · 2022–Present</p>
+          </article>
+          <article>
+            <h3>MTech, Computer Science and Engineering</h3>
+            <p>Indian Institute of Technology Hyderabad · 2019–2021</p>
+          </article>
+          <article>
+            <h3>BE, Computer Science and Engineering</h3>
+            <p>University Institute of Technology, RGPV · 2014–2018</p>
+          </article>
         </div>
       </section>
 
