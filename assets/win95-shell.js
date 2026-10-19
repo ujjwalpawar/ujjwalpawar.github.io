@@ -438,7 +438,7 @@
   });
   if (desktopLayout.matches) {
     setTimeout(() => {
-      if (desktopLayout.matches) showTip();
-    }, 2500);
+      if (desktopLayout.matches) showTip({ immediate: true });
+    }, 600);
   }
 })();
