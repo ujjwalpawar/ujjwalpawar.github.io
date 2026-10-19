@@ -238,6 +238,9 @@
       href: "https://ieeexplore.ieee.org/abstract/document/9221114",
     },
   ];
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const AVATAR_POSES = ["Default", "IdleAtom", "IdleEyeBrowRaise", "IdleFingerTap", "IdleHeadScratch", "IdleSideToSide"];
+  const restingPose = reduceMotion ? "Default" : AVATAR_POSES[Math.floor(Math.random() * AVATAR_POSES.length)];
   const template = document.createElement("template");
   template.innerHTML = `
     <aside class="clippy" aria-label="Paper facts assistant">
@@ -252,7 +255,7 @@
         </div>
       </div>
       <button class="clippy-character" type="button" aria-label="Show a fact about my papers">
-        <img class="clippy-sprite" src="assets/vendor/clippy/Default.png" width="124" height="93" alt="" />
+        <img class="clippy-sprite" src="assets/vendor/clippy/${restingPose}.png" width="124" height="93" alt="" />
       </button>
     </aside>
   `;
@@ -305,9 +308,9 @@
     IdleFingerTap: 1150,
     IdleAtom: 4500,
   };
-  const IDLES = ["IdleEyeBrowRaise", "IdleHeadScratch", "IdleSideToSide", "IdleFingerTap", "IdleAtom"];
+  const IDLES = AVATAR_POSES.filter((name) => name !== "Default");
   const sprite = clippy.querySelector(".clippy-sprite");
-  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const restingSprite = `${SPRITES}${restingPose}.png`;
   const blobs = {};
   let restTimer = 0;
   let busyUntil = 0;
@@ -341,7 +344,7 @@
     clearTimeout(restTimer);
     setSprite(await freshUrl(name));
     restTimer = setTimeout(() => {
-      setSprite(`${SPRITES}Default.png`);
+      setSprite(restingSprite);
       busyUntil = 0;
       done?.();
     }, ANIMATIONS[name]);
@@ -424,12 +427,19 @@
   });
   clippy.querySelector(".clippy-close")?.addEventListener("click", () => {
     bubble.hidden = true;
-    play("GoodBye", {
-      force: true,
-      done: () => {
-        clippy.hidden = true;
-      },
-    });
+    play("GoodBye", { force: true });
+    setTimeout(() => {
+      clearTimeout(restTimer);
+      clippy.hidden = true;
+      busyUntil = 0;
+      clippy.classList.toggle("is-left");
+      document.body.classList.toggle("clippy-on-left", clippy.classList.contains("is-left"));
+      setTimeout(() => {
+        setSprite(restingSprite);
+        clippy.hidden = false;
+        play("GetAttention", { force: true });
+      }, 250);
+    }, 900);
   });
 
   const desktopLayout = window.matchMedia("(min-width: 1180px)");

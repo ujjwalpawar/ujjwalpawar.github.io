@@ -385,6 +385,22 @@ body.win95-locked .clippy {
   margin-right: 2px;
 }
 
+.clippy.is-left {
+  right: auto;
+  left: 10px;
+  align-items: flex-start;
+}
+
+.clippy.is-left .clippy-bubble::after {
+  right: auto;
+  left: 48px;
+}
+
+.clippy.is-left .clippy-sprite {
+  margin-right: 0;
+  margin-left: 2px;
+}
+
 @media (min-width: 1180px) {
   .page {
     margin-right: max(300px, calc((100vw - 1160px) / 2));
@@ -396,6 +412,16 @@ body.win95-locked .clippy {
     bottom: auto;
     width: 270px;
     max-width: calc(100vw - 36px);
+  }
+
+  .clippy.is-left {
+    right: auto;
+    left: 18px;
+  }
+
+  body.clippy-on-left .page {
+    margin-right: auto;
+    margin-left: max(300px, calc((100vw - 1160px) / 2));
   }
 }
 
