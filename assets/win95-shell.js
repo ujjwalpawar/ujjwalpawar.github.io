@@ -238,16 +238,6 @@
       href: "https://ieeexplore.ieee.org/abstract/document/9221114",
     },
   ];
-  const DISMISS_KEY = "win95-clippy-dismissed";
-
-  const isDismissed = () => {
-    try {
-      return sessionStorage.getItem(DISMISS_KEY) === "1";
-    } catch {
-      return false;
-    }
-  };
-
   const template = document.createElement("template");
   template.innerHTML = `
     <aside class="clippy" aria-label="Paper facts assistant">
@@ -430,9 +420,6 @@
   });
   clippy.querySelector(".clippy-close")?.addEventListener("click", () => {
     bubble.hidden = true;
-    try {
-      sessionStorage.setItem(DISMISS_KEY, "1");
-    } catch {}
     play("GoodBye", {
       force: true,
       done: () => {
@@ -441,9 +428,5 @@
     });
   });
 
-  if (isDismissed()) {
-    clippy.hidden = true;
-  } else {
-    setTimeout(showTip, 2500);
-  }
+  setTimeout(showTip, 2500);
 })();
