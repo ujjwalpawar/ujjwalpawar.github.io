@@ -249,13 +249,14 @@ body.win95-locked {
 }
 
 .clippy {
-  position: fixed;
-  top: 110px;
-  right: 18px;
+  position: relative;
   z-index: 90;
   display: flex;
   align-items: flex-start;
   gap: 14px;
+  width: fit-content;
+  max-width: calc(100% - 20px);
+  margin: 12px 10px 0 auto;
   font-family: Tahoma, "MS Sans Serif", "Microsoft Sans Serif", Arial, sans-serif;
 }
 
@@ -383,9 +384,8 @@ body.win95-locked .clippy {
 
 @media (max-width: 600px) {
   .clippy {
-    top: 90px;
-    right: 10px;
     gap: 10px;
+    margin-top: 10px;
   }
 
   .clippy-sprite {

@@ -256,7 +256,9 @@
       </button>
     </aside>
   `;
-  document.body.append(template.content);
+  const navigation = document.querySelector("#main-content > nav");
+  if (navigation) navigation.after(template.content);
+  else document.body.append(template.content);
 
   const clippy = document.querySelector(".clippy");
   const bubble = clippy?.querySelector(".clippy-bubble");
