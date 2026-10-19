@@ -130,49 +130,94 @@
 (() => {
   const TIPS = [
     {
+      text: "Chronos emulates 10,000 base stations and 10,000 phones on 130 cloud instances, two orders of magnitude bigger than existing RAN emulators.",
+      paper: "Chronos · MobiCom ’26",
+      href: "https://doi.org/10.1145/3795866.3844156",
+    },
+    {
+      text: "Chronos virtualizes emulation time, so cloud hiccups like VM preemption and network latency don’t break the RAN’s sub-millisecond deadlines.",
+      paper: "Chronos · MobiCom ’26",
+      href: "https://doi.org/10.1145/3795866.3844156",
+    },
+    {
+      text: "The first Chronos prototype already emulated 250 base stations and 1,000 UEs on public cloud using 468 CPU cores.",
+      paper: "RAN Emulation · HotMobile ’25",
+      href: "https://doi.org/10.1145/3708468.3711895",
+    },
+    {
+      text: "Panoramic traced a 5G cell missing radio slots to a Kubernetes audit log being flushed on the same CPU cores. Fixing log rotation fixed the radio.",
+      paper: "Panoramic · Open AI-RAN ’26",
+      href: "https://doi.org/10.1145/3842655.3844894",
+    },
+    {
+      text: "Panoramic tags every metric with the cell, server, and switch port it belongs to, so a dropped-throughput alarm can be traced to a faulty switch port.",
+      paper: "Panoramic · Open AI-RAN ’26",
+      href: "https://doi.org/10.1145/3842655.3844894",
+    },
+    {
+      text: "Campus5G has 20 radio units across 6 university buildings, so most spots on campus see 2–3 cells at once.",
+      paper: "Campus5G · SIGCOMM CCR",
+      href: "https://doi.org/10.1145/3787927.3787930",
+    },
+    {
+      text: "The team walked 15 km of walk tests to map Campus5G’s real-world coverage.",
+      paper: "Campus5G · SIGCOMM CCR",
+      href: "https://doi.org/10.1145/3787927.3787930",
+    },
+    {
+      text: "Campus5G reaches up to 800 Mbps downlink, and each server has 200 Gbps of network capacity for fronthaul.",
+      paper: "Campus5G · SIGCOMM CCR",
+      href: "https://doi.org/10.1145/3787927.3787930",
+    },
+    {
+      text: "Campus5G covers the University of Edinburgh’s central campus, over 50 acres, and won the Best Demo Award at MobiCom ’25.",
+      paper: "Campus5G Demo · MobiCom ’25",
+      href: "https://doi.org/10.1145/3680207.3765606",
+    },
+    {
+      text: "Campus5G survived Storm Éowyn.",
+      paper: "Campus5G Photo Journey",
+      href: "campus5g.html",
+    },
+    {
       text: "SpotLight beats prior Open RAN anomaly detectors by 13% in F1 score.",
       paper: "SpotLight · MobiCom ’24",
       href: "https://doi.org/10.1145/3636534.3649380",
     },
     {
-      text: "SpotLight points operators at 2.3–4× fewer KPIs when it explains an anomaly, so they know where to look.",
+      text: "SpotLight points operators to 2.3–4× fewer KPIs when explaining an anomaly, and cuts bandwidth by 4–7×.",
       paper: "SpotLight · MobiCom ’24",
       href: "https://doi.org/10.1145/3636534.3649380",
     },
     {
-      text: "SpotLight flags anomalies at the edge with a lightweight model and confirms them in the cloud, cutting bandwidth by 4–7×.",
-      paper: "SpotLight · MobiCom ’24",
-      href: "https://doi.org/10.1145/3636534.3649380",
+      text: "SpotLight pairs two generative models: JVGAN screens KPIs cheaply at the edge, and MRPI confirms anomalies in the cloud.",
+      paper: "SpotLight Demo · MobiCom ’24",
+      href: "https://doi.org/10.1145/3636534.3698854",
     },
     {
-      text: "Campus5G is the first O-RAN-compliant private 5G testbed at campus scale, spread across the University of Edinburgh’s central campus.",
-      paper: "Campus5G · SIGCOMM CCR",
-      href: "https://doi.org/10.1145/3787927.3787930",
+      text: "Predicting traffic first lets 5G C-RAN run up to 18% fewer active CU servers than reactive clustering, without overloading.",
+      paper: "Proactive Clustering · NetSoft 2022",
+      href: "https://doi.org/10.1109/NetSoft54395.2022.9844048",
     },
     {
-      text: "The Campus5G demo won the Best Demo Award at ACM MobiCom ’25 in Hong Kong.",
-      paper: "Campus5G Demo · MobiCom ’25",
-      href: "https://doi.org/10.1145/3680207.3765606",
+      text: "A ConvLSTM trained on two months of Milan mobile data forecasts traffic with up to 26% better RMSE than prior models.",
+      paper: "Proactive Clustering · NetSoft 2022",
+      href: "https://doi.org/10.1109/NetSoft54395.2022.9844048",
     },
     {
-      text: "Campus5G survived Storm Éowyn, an early proof that the deployment can take a beating.",
-      paper: "Campus5G Photo Journey",
-      href: "campus5g.html",
-    },
-    {
-      text: "You can emulate a whole RAN on the public cloud to test mobile networks at scale without buying racks of hardware.",
-      paper: "RAN Emulation · HotMobile ’25",
-      href: "https://doi.org/10.1145/3708468.3711895",
-    },
-    {
-      text: "Tuning Cloud RAN compute to the traffic it actually carries saves energy.",
+      text: "Using a lower MCS during quiet hours lets Cloud RAN CPUs clock down, saving 25% energy on average and up to 40% at low load.",
       paper: "Energy Efficient Cloud RANs · GLOBECOM 2021",
       href: "https://doi.org/10.1109/GLOBECOM46510.2021.9685440",
     },
     {
-      text: "Predicting cellular traffic lets 5G C-RAN group base stations into clusters before the load arrives.",
-      paper: "Proactive Clustering · NetSoft 2022",
-      href: "https://doi.org/10.1109/NetSoft54395.2022.9844048",
+      text: "Picking 5G numerologies and bandwidth parts to match live traffic cuts delay by up to 36% and packet loss by up to 18.5% compared with a static setup.",
+      paper: "Bandwidth Segmentation · ANTS 2021",
+      href: "https://doi.org/10.1109/ANTS52808.2021.9936957",
+    },
+    {
+      text: "On a real OpenAirInterface C-RAN testbed, some lower CPU clock frequencies save energy without hurting throughput.",
+      paper: "C-RAN Energy Study · 5GWF 2020",
+      href: "https://ieeexplore.ieee.org/abstract/document/9221114",
     },
   ];
   const DISMISS_KEY = "win95-clippy-dismissed";
@@ -228,7 +273,8 @@
     const tip = TIPS[index];
     text.textContent = tip.text;
     paper.textContent = tip.paper;
-    paper.href = tip.href;
+    if (tip.href) paper.href = tip.href;
+    else paper.removeAttribute("href");
     bubble.hidden = false;
     clippy.classList.remove("is-bouncing");
     void clippy.offsetWidth;

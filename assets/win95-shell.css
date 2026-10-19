@@ -307,6 +307,11 @@ body.win95-locked .clippy {
   text-decoration: underline;
 }
 
+.clippy-paper:not([href]) {
+  color: #404040;
+  text-decoration: none;
+}
+
 .clippy-actions {
   display: flex;
   justify-content: flex-end;
