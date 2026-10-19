@@ -126,3 +126,138 @@
     if (event.target === dialogLayer) closeDialog();
   });
 })();
+
+(() => {
+  const TIPS = [
+    {
+      text: "SpotLight beats prior Open RAN anomaly detectors by 13% in F1 score.",
+      paper: "SpotLight · MobiCom ’24",
+      href: "https://doi.org/10.1145/3636534.3649380",
+    },
+    {
+      text: "SpotLight points operators at 2.3–4× fewer KPIs when it explains an anomaly, so they know where to look.",
+      paper: "SpotLight · MobiCom ’24",
+      href: "https://doi.org/10.1145/3636534.3649380",
+    },
+    {
+      text: "SpotLight flags anomalies at the edge with a lightweight model and confirms them in the cloud, cutting bandwidth by 4–7×.",
+      paper: "SpotLight · MobiCom ’24",
+      href: "https://doi.org/10.1145/3636534.3649380",
+    },
+    {
+      text: "Campus5G is the first O-RAN-compliant private 5G testbed at campus scale, spread across the University of Edinburgh’s central campus.",
+      paper: "Campus5G · SIGCOMM CCR",
+      href: "https://doi.org/10.1145/3787927.3787930",
+    },
+    {
+      text: "The Campus5G demo won the Best Demo Award at ACM MobiCom ’25 in Hong Kong.",
+      paper: "Campus5G Demo · MobiCom ’25",
+      href: "https://doi.org/10.1145/3680207.3765606",
+    },
+    {
+      text: "Campus5G survived Storm Éowyn, an early proof that the deployment can take a beating.",
+      paper: "Campus5G Photo Journey",
+      href: "campus5g.html",
+    },
+    {
+      text: "You can emulate a whole RAN on the public cloud to test mobile networks at scale without buying racks of hardware.",
+      paper: "RAN Emulation · HotMobile ’25",
+      href: "https://doi.org/10.1145/3708468.3711895",
+    },
+    {
+      text: "Tuning Cloud RAN compute to the traffic it actually carries saves energy.",
+      paper: "Energy Efficient Cloud RANs · GLOBECOM 2021",
+      href: "https://doi.org/10.1109/GLOBECOM46510.2021.9685440",
+    },
+    {
+      text: "Predicting cellular traffic lets 5G C-RAN group base stations into clusters before the load arrives.",
+      paper: "Proactive Clustering · NetSoft 2022",
+      href: "https://doi.org/10.1109/NetSoft54395.2022.9844048",
+    },
+  ];
+  const DISMISS_KEY = "win95-clippy-dismissed";
+
+  const isDismissed = () => {
+    try {
+      return sessionStorage.getItem(DISMISS_KEY) === "1";
+    } catch {
+      return false;
+    }
+  };
+
+  const template = document.createElement("template");
+  template.innerHTML = `
+    <aside class="clippy" aria-label="Paper facts assistant">
+      <div class="clippy-bubble" role="status" aria-live="polite" hidden>
+        <button class="clippy-close" type="button" aria-label="Dismiss assistant">×</button>
+        <p class="clippy-heading">Did you know...</p>
+        <p class="clippy-text"></p>
+        <a class="clippy-paper"></a>
+        <div class="clippy-actions">
+          <button class="clippy-next" type="button">Next tip</button>
+          <button class="clippy-hide" type="button">OK</button>
+        </div>
+      </div>
+      <button class="clippy-character" type="button" aria-label="Show a fact about my papers">
+        <svg viewBox="0 0 64 104" aria-hidden="true">
+          <path class="clippy-wire" d="M38 40 V80 a8 8 0 0 1 -16 0 V30 a13 13 0 0 1 26 0 V84 a18 18 0 0 1 -36 0 V44" />
+          <path class="clippy-brow" d="M14 15 q6 -6 13 -2 M37 13 q7 -4 13 2" />
+          <circle class="clippy-eye" cx="21" cy="25" r="7" />
+          <circle class="clippy-eye" cx="43" cy="25" r="7" />
+          <circle class="clippy-pupil" cx="23" cy="26" r="3" />
+          <circle class="clippy-pupil" cx="45" cy="26" r="3" />
+        </svg>
+      </button>
+    </aside>
+  `;
+  document.body.append(template.content);
+
+  const clippy = document.querySelector(".clippy");
+  const bubble = clippy?.querySelector(".clippy-bubble");
+  const text = clippy?.querySelector(".clippy-text");
+  const paper = clippy?.querySelector(".clippy-paper");
+  const character = clippy?.querySelector(".clippy-character");
+
+  if (!(clippy instanceof HTMLElement) || !(bubble instanceof HTMLElement) || !(text instanceof HTMLElement) || !(paper instanceof HTMLAnchorElement) || !(character instanceof HTMLButtonElement)) {
+    return;
+  }
+
+  let index = Math.floor(Math.random() * TIPS.length);
+
+  const showTip = () => {
+    const tip = TIPS[index];
+    text.textContent = tip.text;
+    paper.textContent = tip.paper;
+    paper.href = tip.href;
+    bubble.hidden = false;
+    clippy.classList.remove("is-bouncing");
+    void clippy.offsetWidth;
+    clippy.classList.add("is-bouncing");
+  };
+
+  const nextTip = () => {
+    index = (index + 1) % TIPS.length;
+    showTip();
+  };
+
+  character.addEventListener("click", () => {
+    if (bubble.hidden) showTip();
+    else nextTip();
+  });
+  clippy.querySelector(".clippy-next")?.addEventListener("click", nextTip);
+  clippy.querySelector(".clippy-hide")?.addEventListener("click", () => {
+    bubble.hidden = true;
+  });
+  clippy.querySelector(".clippy-close")?.addEventListener("click", () => {
+    clippy.hidden = true;
+    try {
+      sessionStorage.setItem(DISMISS_KEY, "1");
+    } catch {}
+  });
+
+  if (isDismissed()) {
+    clippy.hidden = true;
+  } else {
+    setTimeout(showTip, 2500);
+  }
+})();
