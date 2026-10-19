@@ -256,9 +256,7 @@
       </button>
     </aside>
   `;
-  const navigation = document.querySelector("#main-content > nav");
-  if (navigation) navigation.after(template.content);
-  else document.body.append(template.content);
+  document.body.append(template.content);
 
   const clippy = document.querySelector(".clippy");
   const bubble = clippy?.querySelector(".clippy-bubble");
@@ -360,9 +358,8 @@
     else paper.removeAttribute("href");
   };
 
-  // When the bubble is closed, Clippy animates first and the bubble opens once he finishes.
-  // When it is already open, the tip changes straight away while he explains.
-  const showTip = () => {
+  // Automatic greetings open after the animation; direct clicks reveal the bubble immediately.
+  const showTip = ({ immediate = false } = {}) => {
     fillTip();
     const animation = greeted ? "Explain" : "Greeting";
     greeted = true;
@@ -371,6 +368,11 @@
       return;
     }
     if (opening) return;
+    if (immediate) {
+      bubble.hidden = false;
+      play(animation, { force: true });
+      return;
+    }
     opening = true;
     play(animation, {
       force: true,
@@ -413,7 +415,7 @@
   }
 
   character.addEventListener("click", () => {
-    if (bubble.hidden) showTip();
+    if (bubble.hidden) showTip({ immediate: true });
     else nextTip();
   });
   clippy.querySelector(".clippy-next")?.addEventListener("click", nextTip);
@@ -430,5 +432,13 @@
     });
   });
 
-  setTimeout(showTip, 2500);
+  const desktopLayout = window.matchMedia("(min-width: 1180px)");
+  desktopLayout.addEventListener?.("change", (event) => {
+    if (!event.matches) bubble.hidden = true;
+  });
+  if (desktopLayout.matches) {
+    setTimeout(() => {
+      if (desktopLayout.matches) showTip();
+    }, 2500);
+  }
 })();
