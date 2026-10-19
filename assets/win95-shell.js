@@ -262,7 +262,7 @@
         </div>
       </div>
       <button class="clippy-character" type="button" aria-label="Show a fact about my papers">
-        <svg viewBox="0 0 23 50" shape-rendering="crispEdges" aria-hidden="true"><path fill="#14171c" d="M12 5h1v1h-1zM11 6h1v1h-1zM12 8h1v1h-1zM11 9h1v1h-1zM21 9h1v1h-1zM22 10h1v1h-1zM22 11h1v1h-1zM22 12h1v1h-1zM6 13h1v1h-1zM9 13h1v1h-1zM19 13h1v1h-1zM22 13h1v1h-1zM6 14h1v1h-1zM8 14h1v1h-1zM20 14h1v1h-1zM22 14h1v1h-1zM6 15h1v1h-1zM8 15h1v1h-1zM20 15h1v1h-1zM22 15h1v1h-1zM6 16h1v1h-1zM8 16h1v1h-1zM15 16h1v1h-1zM20 16h1v1h-1zM22 16h1v1h-1zM6 17h1v1h-1zM8 17h1v1h-1zM14 17h1v1h-1zM16 17h1v1h-1zM20 17h1v1h-1zM22 17h1v1h-1zM6 18h1v1h-1zM8 18h1v1h-1zM14 18h1v1h-1zM16 18h1v1h-1zM20 18h1v1h-1zM22 18h1v1h-1zM6 19h1v1h-1zM8 19h1v1h-1zM14 19h1v1h-1zM16 19h1v1h-1zM20 19h1v1h-1zM22 19h1v1h-1zM1 20h1v1h-1zM6 20h1v1h-1zM8 20h1v1h-1zM14 20h1v1h-1zM16 20h1v1h-1zM20 20h1v1h-1zM22 20h1v1h-1zM0 21h1v1h-1zM2 21h1v1h-1zM6 21h1v1h-1zM8 21h1v1h-1zM14 21h1v1h-1zM16 21h1v1h-1zM20 21h1v1h-1zM22 21h1v1h-1zM0 22h1v1h-1zM2 22h1v1h-1zM6 22h1v1h-1zM8 22h1v1h-1zM14 22h1v1h-1zM16 22h1v1h-1zM20 22h1v1h-1zM22 22h1v1h-1zM0 23h1v1h-1zM2 23h1v1h-1zM6 23h1v1h-1zM8 23h1v1h-1zM14 23h1v1h-1zM16 23h1v1h-1zM20 23h1v1h-1zM22 23h1v1h-1zM0 24h1v1h-1zM2 24h1v1h-1zM6 24h1v1h-1zM8 24h1v1h-1zM14 24h1v1h-1zM16 24h1v1h-1zM20 24h1v1h-1zM22 24h1v1h-1zM0 25h1v1h-1zM2 25h1v1h-1zM6 25h1v1h-1zM8 25h1v1h-1zM14 25h1v1h-1zM16 25h1v1h-1zM20 25h1v1h-1zM22 25h1v1h-1zM0 26h1v1h-1zM2 26h1v1h-1zM6 26h1v1h-1zM8 26h1v1h-1zM14 26h1v1h-1zM16 26h1v1h-1zM20 26h1v1h-1zM22 26h1v1h-1zM0 27h1v1h-1zM2 27h1v1h-1zM6 27h1v1h-1zM8 27h1v1h-1zM14 27h1v1h-1zM16 27h1v1h-1zM20 27h1v1h-1zM22 27h1v1h-1zM0 28h1v1h-1zM2 28h1v1h-1zM6 28h1v1h-1zM8 28h1v1h-1zM14 28h1v1h-1zM16 28h1v1h-1zM20 28h1v1h-1zM22 28h1v1h-1zM0 29h1v1h-1zM2 29h1v1h-1zM6 29h1v1h-1zM8 29h1v1h-1zM14 29h1v1h-1zM16 29h1v1h-1zM20 29h1v1h-1zM22 29h1v1h-1zM0 30h1v1h-1zM2 30h1v1h-1zM6 30h1v1h-1zM8 30h1v1h-1zM14 30h1v1h-1zM16 30h1v1h-1zM20 30h1v1h-1zM22 30h1v1h-1zM0 31h1v1h-1zM2 31h1v1h-1zM6 31h1v1h-1zM8 31h1v1h-1zM14 31h1v1h-1zM16 31h1v1h-1zM20 31h1v1h-1zM22 31h1v1h-1zM0 32h1v1h-1zM2 32h1v1h-1zM6 32h1v1h-1zM8 32h1v1h-1zM14 32h1v1h-1zM16 32h1v1h-1zM20 32h1v1h-1zM22 32h1v1h-1zM0 33h1v1h-1zM2 33h1v1h-1zM6 33h1v1h-1zM8 33h1v1h-1zM14 33h1v1h-1zM16 33h1v1h-1zM20 33h1v1h-1zM22 33h1v1h-1zM0 34h1v1h-1zM2 34h1v1h-1zM6 34h1v1h-1zM9 34h1v1h-1zM13 34h1v1h-1zM16 34h1v1h-1zM20 34h1v1h-1zM22 34h1v1h-1zM0 35h1v1h-1zM2 35h1v1h-1zM6 35h1v1h-1zM9 35h1v1h-1zM13 35h1v1h-1zM16 35h1v1h-1zM20 35h1v1h-1zM22 35h1v1h-1zM0 36h1v1h-1zM2 36h1v1h-1zM6 36h1v1h-1zM10 36h1v1h-1zM11 36h1v1h-1zM12 36h1v1h-1zM16 36h1v1h-1zM20 36h1v1h-1zM22 36h1v1h-1zM0 37h1v1h-1zM2 37h1v1h-1zM7 37h1v1h-1zM15 37h1v1h-1zM20 37h1v1h-1zM22 37h1v1h-1zM0 38h1v1h-1zM3 38h1v1h-1zM8 38h1v1h-1zM14 38h1v1h-1zM19 38h1v1h-1zM22 38h1v1h-1zM0 39h1v1h-1zM3 39h1v1h-1zM9 39h1v1h-1zM10 39h1v1h-1zM11 39h1v1h-1zM12 39h1v1h-1zM13 39h1v1h-1zM19 39h1v1h-1zM22 39h1v1h-1zM0 40h1v1h-1zM3 40h1v1h-1zM19 40h1v1h-1zM22 40h1v1h-1zM0 41h1v1h-1zM3 41h1v1h-1zM19 41h1v1h-1zM22 41h1v1h-1zM0 42h1v1h-1zM4 42h1v1h-1zM18 42h1v1h-1zM22 42h1v1h-1zM1 43h1v1h-1zM4 43h1v1h-1zM18 43h1v1h-1zM21 43h1v1h-1zM2 44h1v1h-1zM5 44h1v1h-1zM6 44h1v1h-1zM16 44h1v1h-1zM17 44h1v1h-1zM20 44h1v1h-1zM2 45h1v1h-1zM7 45h1v1h-1zM8 45h1v1h-1zM14 45h1v1h-1zM15 45h1v1h-1zM20 45h1v1h-1zM3 46h1v1h-1zM4 46h1v1h-1zM9 46h1v1h-1zM10 46h1v1h-1zM11 46h1v1h-1zM12 46h1v1h-1zM13 46h1v1h-1zM18 46h1v1h-1zM19 46h1v1h-1zM5 47h1v1h-1zM17 47h1v1h-1zM6 48h1v1h-1zM7 48h1v1h-1zM15 48h1v1h-1zM16 48h1v1h-1zM8 49h1v1h-1zM9 49h1v1h-1zM10 49h1v1h-1zM11 49h1v1h-1zM12 49h1v1h-1zM13 49h1v1h-1zM14 49h1v1h-1z" /><path fill="#000000" d="M5 0h1v1h-1zM6 0h1v1h-1zM7 0h1v1h-1zM8 0h1v1h-1zM15 0h1v1h-1zM16 0h1v1h-1zM17 0h1v1h-1zM18 0h1v1h-1zM5 1h1v1h-1zM6 1h1v1h-1zM7 1h1v1h-1zM8 1h1v1h-1zM15 1h1v1h-1zM16 1h1v1h-1zM17 1h1v1h-1zM18 1h1v1h-1zM4 2h1v1h-1zM9 2h1v1h-1zM14 2h1v1h-1zM19 2h1v1h-1zM3 3h1v1h-1zM10 3h1v1h-1zM13 3h1v1h-1zM20 3h1v1h-1zM3 5h1v1h-1zM4 5h1v1h-1zM5 5h1v1h-1zM6 5h1v1h-1zM7 5h1v1h-1zM8 5h1v1h-1zM9 5h1v1h-1zM10 5h1v1h-1zM13 5h1v1h-1zM14 5h1v1h-1zM15 5h1v1h-1zM16 5h1v1h-1zM17 5h1v1h-1zM18 5h1v1h-1zM19 5h1v1h-1zM20 5h1v1h-1zM3 6h1v1h-1zM10 6h1v1h-1zM13 6h1v1h-1zM20 6h1v1h-1zM3 7h1v1h-1zM10 7h1v1h-1zM13 7h1v1h-1zM20 7h1v1h-1zM3 8h1v1h-1zM10 8h1v1h-1zM13 8h1v1h-1zM20 8h1v1h-1zM3 9h1v1h-1zM10 9h1v1h-1zM13 9h1v1h-1zM20 9h1v1h-1zM3 10h1v1h-1zM10 10h1v1h-1zM13 10h1v1h-1zM20 10h1v1h-1zM3 11h1v1h-1zM10 11h1v1h-1zM13 11h1v1h-1zM20 11h1v1h-1zM3 12h1v1h-1zM4 12h1v1h-1zM5 12h1v1h-1zM6 12h1v1h-1zM7 12h1v1h-1zM8 12h1v1h-1zM9 12h1v1h-1zM10 12h1v1h-1zM13 12h1v1h-1zM14 12h1v1h-1zM15 12h1v1h-1zM16 12h1v1h-1zM17 12h1v1h-1zM18 12h1v1h-1zM19 12h1v1h-1zM20 12h1v1h-1z" /><path fill="#a9b2bb" d="M8 36h1v1h-1zM14 36h1v1h-1zM9 37h1v1h-1zM13 37h1v1h-1zM2 42h1v1h-1zM20 42h1v1h-1zM6 46h1v1h-1zM16 46h1v1h-1zM8 47h1v1h-1zM14 47h1v1h-1z" /><path fill="#6b7580" d="M12 7h1v1h-1zM11 8h1v1h-1zM21 11h1v1h-1zM21 12h1v1h-1zM8 13h1v1h-1zM21 13h1v1h-1zM15 34h1v1h-1zM8 35h1v1h-1zM15 35h1v1h-1zM15 36h1v1h-1zM14 37h1v1h-1zM10 38h1v1h-1zM11 38h1v1h-1zM12 38h1v1h-1zM13 38h1v1h-1zM21 38h1v1h-1zM2 39h1v1h-1zM21 39h1v1h-1zM2 40h1v1h-1zM21 40h1v1h-1zM2 41h1v1h-1zM21 41h1v1h-1zM21 42h1v1h-1zM3 43h1v1h-1zM20 43h1v1h-1zM19 44h1v1h-1zM4 45h1v1h-1zM18 45h1v1h-1zM19 45h1v1h-1zM17 46h1v1h-1zM7 47h1v1h-1zM15 47h1v1h-1zM16 47h1v1h-1zM9 48h1v1h-1zM10 48h1v1h-1zM11 48h1v1h-1zM12 48h1v1h-1zM13 48h1v1h-1zM14 48h1v1h-1z" /><path fill="#f2f5f7" d="M12 6h1v1h-1zM11 7h1v1h-1zM21 10h1v1h-1zM7 13h1v1h-1zM20 13h1v1h-1zM7 14h1v1h-1zM21 14h1v1h-1zM7 15h1v1h-1zM21 15h1v1h-1zM7 16h1v1h-1zM21 16h1v1h-1zM7 17h1v1h-1zM15 17h1v1h-1zM21 17h1v1h-1zM7 18h1v1h-1zM15 18h1v1h-1zM21 18h1v1h-1zM7 19h1v1h-1zM15 19h1v1h-1zM21 19h1v1h-1zM7 20h1v1h-1zM15 20h1v1h-1zM21 20h1v1h-1zM1 21h1v1h-1zM7 21h1v1h-1zM15 21h1v1h-1zM21 21h1v1h-1zM1 22h1v1h-1zM7 22h1v1h-1zM15 22h1v1h-1zM21 22h1v1h-1zM1 23h1v1h-1zM7 23h1v1h-1zM15 23h1v1h-1zM21 23h1v1h-1zM1 24h1v1h-1zM7 24h1v1h-1zM15 24h1v1h-1zM21 24h1v1h-1zM1 25h1v1h-1zM7 25h1v1h-1zM15 25h1v1h-1zM21 25h1v1h-1zM1 26h1v1h-1zM7 26h1v1h-1zM15 26h1v1h-1zM21 26h1v1h-1zM1 27h1v1h-1zM7 27h1v1h-1zM15 27h1v1h-1zM21 27h1v1h-1zM1 28h1v1h-1zM7 28h1v1h-1zM15 28h1v1h-1zM21 28h1v1h-1zM1 29h1v1h-1zM7 29h1v1h-1zM15 29h1v1h-1zM21 29h1v1h-1zM1 30h1v1h-1zM7 30h1v1h-1zM15 30h1v1h-1zM21 30h1v1h-1zM1 31h1v1h-1zM7 31h1v1h-1zM15 31h1v1h-1zM21 31h1v1h-1zM1 32h1v1h-1zM7 32h1v1h-1zM15 32h1v1h-1zM21 32h1v1h-1zM1 33h1v1h-1zM7 33h1v1h-1zM15 33h1v1h-1zM21 33h1v1h-1zM1 34h1v1h-1zM7 34h1v1h-1zM8 34h1v1h-1zM14 34h1v1h-1zM21 34h1v1h-1zM1 35h1v1h-1zM7 35h1v1h-1zM14 35h1v1h-1zM21 35h1v1h-1zM1 36h1v1h-1zM7 36h1v1h-1zM9 36h1v1h-1zM13 36h1v1h-1zM21 36h1v1h-1zM1 37h1v1h-1zM8 37h1v1h-1zM10 37h1v1h-1zM11 37h1v1h-1zM12 37h1v1h-1zM21 37h1v1h-1zM1 38h1v1h-1zM2 38h1v1h-1zM9 38h1v1h-1zM20 38h1v1h-1zM1 39h1v1h-1zM20 39h1v1h-1zM1 40h1v1h-1zM20 40h1v1h-1zM1 41h1v1h-1zM20 41h1v1h-1zM1 42h1v1h-1zM3 42h1v1h-1zM19 42h1v1h-1zM2 43h1v1h-1zM19 43h1v1h-1zM3 44h1v1h-1zM4 44h1v1h-1zM18 44h1v1h-1zM3 45h1v1h-1zM5 45h1v1h-1zM6 45h1v1h-1zM16 45h1v1h-1zM17 45h1v1h-1zM5 46h1v1h-1zM7 46h1v1h-1zM8 46h1v1h-1zM14 46h1v1h-1zM15 46h1v1h-1zM6 47h1v1h-1zM9 47h1v1h-1zM10 47h1v1h-1zM11 47h1v1h-1zM12 47h1v1h-1zM13 47h1v1h-1zM8 48h1v1h-1z" /><rect class="clippy-eye-white" x="4" y="6" width="6" height="6" fill="#ffffff" /><rect class="clippy-eye-white" x="14" y="6" width="6" height="6" fill="#ffffff" /><g class="clippy-pupils"><rect x="6" y="7" width="2" height="3" fill="#000000" /><rect x="16" y="7" width="2" height="3" fill="#000000" /></g><g class="clippy-lids"><rect x="4" y="6" width="6" height="4" fill="#c9d0d6" /><rect x="4" y="10" width="6" height="1" fill="#000000" /><rect x="4" y="11" width="6" height="1" fill="#c9d0d6" /><rect x="14" y="6" width="6" height="4" fill="#c9d0d6" /><rect x="14" y="10" width="6" height="1" fill="#000000" /><rect x="14" y="11" width="6" height="1" fill="#c9d0d6" /></g></svg>
+        <img class="clippy-sprite" src="assets/vendor/clippy/Default.png" width="124" height="93" alt="" />
       </button>
     </aside>
   `;
@@ -294,6 +294,71 @@
   const tips = shuffle(TIPS);
   let index = 0;
 
+  // Animations are looping APNGs; each is shown for its length, then Clippy returns to rest.
+  const SPRITES = "assets/vendor/clippy/";
+  const ANIMATIONS = {
+    Greeting: 4450,
+    Explain: 1500,
+    GoodBye: 4450,
+    GetAttention: 2650,
+    LookLeft: 1800,
+    LookRight: 1800,
+    LookUp: 1800,
+    LookDown: 1800,
+    LookUpLeft: 1800,
+    LookUpRight: 1800,
+    LookDownLeft: 1800,
+    LookDownRight: 1800,
+    IdleEyeBrowRaise: 1500,
+    IdleHeadScratch: 1900,
+    IdleSideToSide: 5700,
+    IdleFingerTap: 1150,
+    IdleAtom: 4500,
+  };
+  const IDLES = ["IdleEyeBrowRaise", "IdleHeadScratch", "IdleSideToSide", "IdleFingerTap", "IdleAtom"];
+  const sprite = clippy.querySelector(".clippy-sprite");
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const blobs = {};
+  let restTimer = 0;
+  let busyUntil = 0;
+  let plays = 0;
+  let spriteUrl = "";
+
+  // A fresh URL restarts the APNG from its first frame; blob URLs avoid refetching it.
+  const freshUrl = async (name) => {
+    try {
+      blobs[name] ??= await fetch(`${SPRITES}${name}.png`).then((response) => response.blob());
+      return URL.createObjectURL(blobs[name]);
+    } catch {
+      plays += 1;
+      return `${SPRITES}${name}.png?play=${plays}`;
+    }
+  };
+
+  const setSprite = (url) => {
+    if (spriteUrl.startsWith("blob:")) URL.revokeObjectURL(spriteUrl);
+    spriteUrl = url;
+    sprite.src = url;
+  };
+
+  const play = async (name, { force = false, done } = {}) => {
+    if (!(sprite instanceof HTMLImageElement) || reduceMotion) {
+      done?.();
+      return;
+    }
+    if (!force && Date.now() < busyUntil) return;
+    busyUntil = Date.now() + ANIMATIONS[name];
+    clearTimeout(restTimer);
+    setSprite(await freshUrl(name));
+    restTimer = setTimeout(() => {
+      setSprite(`${SPRITES}Default.png`);
+      busyUntil = 0;
+      done?.();
+    }, ANIMATIONS[name]);
+  };
+
+  let greeted = false;
+
   const showTip = () => {
     const tip = tips[index];
     text.textContent = tip.text;
@@ -301,9 +366,8 @@
     if (tip.href) paper.href = tip.href;
     else paper.removeAttribute("href");
     bubble.hidden = false;
-    clippy.classList.remove("is-bouncing");
-    void clippy.offsetWidth;
-    clippy.classList.add("is-bouncing");
+    play(greeted ? "Explain" : "Greeting", { force: true });
+    greeted = true;
   };
 
   const nextTip = () => {
@@ -311,39 +375,31 @@
     showTip();
   };
 
-  // Pupils follow the pointer; with no pointer around, Clippy glances and blinks on its own.
-  const pupils = clippy.querySelector(".clippy-pupils");
-  let lastPointer = 0;
-
-  const look = (dx, dy) => {
-    pupils?.setAttribute("transform", `translate(${dx} ${dy})`);
-  };
-
+  // Clippy looks toward the pointer when it moves to a new side of him.
+  let lastLook = "";
+  let lastLookAt = 0;
   document.addEventListener("pointermove", (event) => {
-    lastPointer = Date.now();
-    const box = character.getBoundingClientRect();
+    if (clippy.hidden || !(sprite instanceof HTMLImageElement)) return;
+    const box = sprite.getBoundingClientRect();
     const vx = event.clientX - (box.left + box.width / 2);
-    const vy = event.clientY - (box.top + box.height * 0.2);
-    const clamp = (value, min, max) => Math.max(min, Math.min(max, value));
-    look(clamp(Math.round(vx / 120), -2, 2), clamp(Math.round(vy / 160), -1, 2));
+    const vy = event.clientY - (box.top + box.height * 0.35);
+    if (Math.hypot(vx, vy) < 90) return;
+    const vertical = vy < -box.height ? "Up" : vy > box.height ? "Down" : "";
+    const horizontal = vx < -box.width / 2 ? "Left" : vx > box.width / 2 ? "Right" : "";
+    const look = `Look${vertical}${horizontal}`;
+    if (look === "Look") return;
+    if (look === lastLook && Date.now() - lastLookAt < 8000) return;
+    if (Date.now() < busyUntil) return;
+    lastLook = look;
+    lastLookAt = Date.now();
+    play(look);
   });
 
-  const blink = () => {
-    clippy.classList.add("is-blinking");
-    setTimeout(() => clippy.classList.remove("is-blinking"), 140);
-  };
-
-  if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  if (!reduceMotion) {
     setInterval(() => {
-      if (Math.random() < 0.6) blink();
-      if (Date.now() - lastPointer > 4000) {
-        const glances = [[-2, 0], [-2, 1], [0, 0], [1, -1], [-1, 2]];
-        look(...glances[Math.floor(Math.random() * glances.length)]);
-      }
-    }, 3000);
+      if (!clippy.hidden && Math.random() < 0.5) play(IDLES[Math.floor(Math.random() * IDLES.length)]);
+    }, 15000);
   }
-
-  look(-2, 0);
 
   character.addEventListener("click", () => {
     if (bubble.hidden) showTip();
@@ -354,10 +410,16 @@
     bubble.hidden = true;
   });
   clippy.querySelector(".clippy-close")?.addEventListener("click", () => {
-    clippy.hidden = true;
+    bubble.hidden = true;
     try {
       sessionStorage.setItem(DISMISS_KEY, "1");
     } catch {}
+    play("GoodBye", {
+      force: true,
+      done: () => {
+        clippy.hidden = true;
+      },
+    });
   });
 
   if (isDismissed()) {

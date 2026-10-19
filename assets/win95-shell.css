@@ -265,7 +265,7 @@ body.win95-locked .clippy {
 
 .clippy-bubble {
   position: relative;
-  width: min(270px, calc(100vw - 96px));
+  width: min(270px, calc(100vw - 150px));
   padding: 10px 12px 10px;
   color: #000000;
   background: #ffffe1;
@@ -368,39 +368,17 @@ body.win95-locked .clippy {
 }
 
 .clippy-character {
-  width: 69px;
-  height: 150px;
   flex: none;
   padding: 0;
   background: transparent;
   border: 0;
   cursor: pointer;
-  filter: drop-shadow(2px 3px 0 rgba(0, 0, 0, 0.25));
 }
 
-.clippy-character svg {
-  width: 100%;
-  height: 100%;
-  overflow: visible;
-  image-rendering: pixelated;
-}
-
-.clippy-lids {
-  display: none;
-}
-
-.clippy.is-blinking .clippy-lids {
-  display: inline;
-}
-
-.clippy.is-bouncing .clippy-character {
-  animation: clippy-bounce 0.6s ease-out;
-}
-
-@keyframes clippy-bounce {
-  0%, 100% { transform: translateY(0) rotate(0); }
-  30% { transform: translateY(-10px) rotate(-6deg); }
-  60% { transform: translateY(0) rotate(4deg); }
+.clippy-sprite {
+  display: block;
+  width: 124px;
+  height: 93px;
 }
 
 @media (max-width: 600px) {
@@ -410,14 +388,9 @@ body.win95-locked .clippy {
     gap: 10px;
   }
 
-  .clippy-character {
-    width: 46px;
-    height: 100px;
+  .clippy-sprite {
+    width: 93px;
+    height: 70px;
   }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .clippy.is-bouncing .clippy-character {
-    animation: none;
-  }
-}
