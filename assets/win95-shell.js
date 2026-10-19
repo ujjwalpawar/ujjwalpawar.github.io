@@ -196,7 +196,7 @@
       href: "https://doi.org/10.1145/3636534.3649380",
     },
     {
-      text: "Campus5G reaches up to 800 Mbps downlink, and each server has 200 Gbps of network capacity for fronthaul.",
+      text: "Campus5G reaches up to 800 Mbps downlink, and each server has 4 × 100G links for fronthaul.",
       paper: "Campus5G · SIGCOMM CCR",
       group: "campus5g",
       href: "https://doi.org/10.1145/3787927.3787930",
