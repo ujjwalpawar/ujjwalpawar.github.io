@@ -358,16 +358,35 @@
   };
 
   let greeted = false;
+  let opening = false;
 
-  const showTip = () => {
+  const fillTip = () => {
     const tip = tips[index];
     text.textContent = tip.text;
     paper.textContent = tip.paper;
     if (tip.href) paper.href = tip.href;
     else paper.removeAttribute("href");
-    bubble.hidden = false;
-    play(greeted ? "Explain" : "Greeting", { force: true });
+  };
+
+  // When the bubble is closed, Clippy animates first and the bubble opens once he finishes.
+  // When it is already open, the tip changes straight away while he explains.
+  const showTip = () => {
+    fillTip();
+    const animation = greeted ? "Explain" : "Greeting";
     greeted = true;
+    if (!bubble.hidden) {
+      play(animation, { force: true });
+      return;
+    }
+    if (opening) return;
+    opening = true;
+    play(animation, {
+      force: true,
+      done: () => {
+        opening = false;
+        if (!clippy.hidden) bubble.hidden = false;
+      },
+    });
   };
 
   const nextTip = () => {
